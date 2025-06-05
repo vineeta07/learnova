@@ -1,0 +1,46 @@
+/* Tasklist.css */
+.tasklist-container {
+  max-width: 400px;
+  margin: 2px auto;
+  padding: 2px;
+    width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+   
+  
+  border-radius: 20px;
+
+}
+
+.tasklist-item {
+  display: flex;
+  align-items: center;
+  margin-top : 0;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.98rem;
+}
+
+.tasklist-item:last-child {
+  border-bottom: none;
+}
+
+.tasklist-actions button {
+  margin-left: 0.5rem;
+  padding: 3px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 1px solid #3a6b5f;
+  background: #e0d1ba;
+  color: #7f1456;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tasklist-actions button:hover {
+  background: #ce7861;
+  color: #2f140c;
+}

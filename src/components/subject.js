@@ -32,8 +32,8 @@ const subjectCardStyle = {
   borderRadius: '10px',
   padding: '1.5rem',
   minWidth: '220px',
-  background: '#4d3ea24)',
-  boxShadow: '0 2px 8px rgb(220, 185, 185)',
+  background: ' rgb(166, 109, 186)',
+  boxShadow: '0 2px 8px rgb(35, 14, 42)',
   marginBottom: '1rem'
 };
 
@@ -188,14 +188,14 @@ const Subject = () => {
                   {subjects.map(sub => (
                     <div key={sub.id} style={subjectCardStyle}>
                       <strong>{sub.name}</strong> <br />
-                      <span style={{ color: '#555' }}>{sub.code}</span>
+                      <span style={{ color: ' #555' }}>{sub.code}</span>
                       <br />
                       <button
                         style={{
                           marginTop: '1rem',
-                          background: '#1976d2',
-                          color: '#fff',
-                          border: 'none',
+                          background: 'rgb(188, 152, 177)',
+                          color: ' #fff ',
+                          border: 'black',
                           borderRadius: '5px',
                           padding: '6px 14px',
                           cursor: 'pointer'
