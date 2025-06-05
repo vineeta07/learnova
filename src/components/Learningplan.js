@@ -1,7 +1,30 @@
-import React from 'react'
+import React ,{useEffect}from 'react'
 import { Link } from 'react-router-dom'
+import {app} from '../Firebase'
+import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
+import{ useNavigate } from 'react-router-dom'
 
 const Learningplan = () => {
+   const navigate = useNavigate('')
+  const Logout =()=>{
+    const auth = getAuth(app)
+    signOut(auth).then(res=>{
+      navigate('/login')
+    })
+  }
+
+  useEffect(()=>{
+    const auth = getAuth(app)
+    const unsubscribe= onAuthStateChanged(auth , (user)=>{
+      if(user){
+        console.log('yes login' , user)
+      }
+      else{
+        console.log('not login')
+      }
+    })
+    return ()=> unsubscribe();
+  },[])
   return (
     <div>
        <div className="main">
@@ -29,8 +52,18 @@ const Learningplan = () => {
             <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
           <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
           <div className="rectangle-6"></div>
-          <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link></div>
-          <div className="rectangle-7"></div>
+          <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
+         <br/>
+          <br/>
+            <button type='button' onClick={Logout} style ={ {color: 'purple',
+               width: '130px',      // Set the width you want
+                padding: '10px',   // Optional: makes the button taller
+               fontSize: '1.1rem',
+               fontWeight: 'bold',  
+             }}>Log Out</button>
+          </div>
+         </div>
+         <div className="rectangle-7"></div>
           <div className="rectangle-8"></div>
           <div className="rectangle-9"></div>
           <p className="p">time spend on learning :</p>
@@ -81,11 +114,11 @@ const Learningplan = () => {
           <div className="rectangle-36"></div>
           <div className="rectangle-37"></div>
           <div className="rectangle-38"></div>
-          <div className="text-wrapper-19">unit-2</div>
-          <div className="text-wrapper-20">unit-5</div>
-          <div className="text-wrapper-21">unit-1</div>
-          <div className="text-wrapper-22">unit-4</div>
-          <div className="text-wrapper-23">unit-3</div>
+          <div className="text-wrapper-19">Task-1</div>
+          <div className="text-wrapper-20">Task-2</div>
+          <div className="text-wrapper-21">Task-3</div>
+          <div className="text-wrapper-22">Task-4</div>
+          <div className="text-wrapper-23">Task-5</div>
           <div className="text-wrapper-24">-complex analysis</div>
           <div className="text-wrapper-25">-programming fund.</div>
           <div className="text-wrapper-26">matlab prog.</div>
@@ -112,7 +145,7 @@ const Learningplan = () => {
         </div>
       
     </div>
-    </div>
+    
    
   )
 }

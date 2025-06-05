@@ -1,6 +1,9 @@
-import React from 'react'
+import React ,{useEffect}from 'react'
 import {Link, Outlet} from 'react-router-dom'
 import './Dashboard.css'
+import {app} from '../Firebase'
+import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
+import{ useNavigate } from 'react-router-dom'
 
 const resourcesSectionStyle = {
   width: '60%',
@@ -16,9 +19,10 @@ const resourcesListStyle = {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
-  marginTop: '12rem',
+  marginTop: '10rem',
   flexWrap: 'wrap',
-  gap: '2rem',
+  gap: '5rem',
+  
   width: '80%',
   justifyContent: 'flex-start'
 };
@@ -28,7 +32,8 @@ const resourceCardStyle = {
   borderRadius: '8px',
   padding: '1rem',
   width: '300px',
-  background: '#26c4ac' //
+  boxShadow: '0 2px 8px rgb(97, 113, 104)',
+  background: 'rgb(77, 187, 170)' //
 };
 const resourceList = [
     {
@@ -69,6 +74,26 @@ const resourceList = [
   
 ];
 const Resources = () => {
+   const navigate = useNavigate('')
+  const Logout =()=>{
+    const auth = getAuth(app)
+    signOut(auth).then(res=>{
+      navigate('/login')
+    })
+  }
+
+  useEffect(()=>{
+    const auth = getAuth(app)
+    const unsubscribe= onAuthStateChanged(auth , (user)=>{
+      if(user){
+        console.log('yes login' , user)
+      }
+      else{
+        console.log('not login')
+      }
+    })
+    return ()=> unsubscribe();
+  },[])
   return (
     <div>
       <div className="main">
@@ -82,27 +107,6 @@ const Resources = () => {
                       <img className="img" src="img/rectangle-3.png" />
                       <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
                     
-                     
-                      <div className="rectangle-2"></div>
-                      <div className="rectangle-3"></div>
-                      <div className="rectangle-4"></div>
-                      <div className="rectangle-5"></div>
-                       
-                      <div className="text-wrapper-3"> 
-                        <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
-                      <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
-                      <div className="rectangle-6"></div>
-                      <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link></div>
-                      <div className="rectangle-7"></div>
-                      <div className="text-wrapper-15">
-                        <h4 style={{ textAlign: 'center', marginBottom: '2rem' }}>RESOURCES</h4>
-                        </div>
-                      <div className="rectangle-33"></div>
-                      <div className="text-wrapper-16">date,day</div>
-                      <div className="ellipse-2"></div>
-
-
-
                       <div style={resourcesSectionStyle}>
                     <div style={resourcesListStyle}>
                         {resourceList.map(resource => (
@@ -114,7 +118,7 @@ const Resources = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{
-                                color: 'darkblue',
+                                color: 'rgb(102, 7, 169)',
                                 textDecoration: 'underline'
                             }}
                             >
@@ -125,6 +129,40 @@ const Resources = () => {
                     </div>
                     </div>
                       
+                      <div className="rectangle-5"></div>
+                       
+                      <div className="text-wrapper-3"> 
+                        <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
+                      <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
+                      <div className="rectangle-6"></div>
+                      <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
+                      <br/>
+                      <br/>
+                        <button type='button' onClick={Logout} style ={ {color: 'purple',
+                          width: '130px',      // Set the width you want
+                            padding: '10px',   // Optional: makes the button taller
+                          fontSize: '1.1rem',
+                          fontWeight: 'bold',  
+                        }}>Log Out</button>
+                      </div>
+                      </div>
+                      
+                      
+                      <div className="rectangle-7"></div>
+                      <div className="text-wrapper-15">
+                        <h4 style={{ textAlign: 'center', marginBottom: '2rem' }}>RESOURCES</h4>
+                        </div>
+                      <div className="rectangle-33"></div>
+
+                      
+                      <div className="text-wrapper-16">date,day</div>
+                      <div className="ellipse-2"></div>
+
+
+
+
+                     
+                      
                       <img className="profile" src="img/profile.svg" />
                     </div>
                     
@@ -134,8 +172,9 @@ const Resources = () => {
                   
                   
                 </div>
+                
                 </div>
-    </div>
+    
   )
 }
 
