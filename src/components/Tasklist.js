@@ -1,10 +1,10 @@
 import React , {useEffect , useState} from 'react'
 import { getDatabase, onValue , ref , remove} from 'firebase/database'
-//import {getStorage , ref as storageref , deleteObject} from 'firebase/storage'
+import {getStorage , ref as storageref , deleteObject} from 'firebase/storage'
 import {app} from '../Firebase'
 import { useNavigate} from 'react-router-dom'
 
-const StudentList = () => {
+const Tasklist = () => {
   const [studentdata , setstudentdata] = useState(null)
   const navigate = useNavigate()
   useEffect(()=>{
@@ -24,7 +24,7 @@ const StudentList = () => {
 
     //const storage = getStorage(app)
 
-    const studentRef = ref (db , 'student/' + key)
+    const studentRef = ref(db , 'student/' + key)
 
     //const myRef = storageRef(storage ,'images/' + key )
     
@@ -35,7 +35,6 @@ const StudentList = () => {
     .catch((err)=>{
       console.log(err)
     }) */
-    remove(studentRef)
   }
   return (
     <div>
@@ -45,10 +44,10 @@ const StudentList = () => {
             { Object.entries(studentdata).map ( ([key , value]) => {
               return(
               <div key ={key}>
-                {/* <img style = {{width:'20%'}}src ={value.imageURL}/> */}
+              {/*   <img style = {{width:'20%'}}src ={value.imageURL} */}
                 <p>{value.studentname} {value.phonenumber}</p>
                 <button onClick = {()=>{deletedata(key)}}> delete </button>
-                <button onClick = {()=>{navigate('/dashboard/updatestudent',{state :[key , value]})}}>Update</button>
+                <button onClick = {()=>{navigate('/updatetask',{state :[key , value]})}}>Update</button>
               </div>
               )
 
@@ -59,4 +58,4 @@ const StudentList = () => {
   )
 }
 
-export default StudentList
+export default Tasklist

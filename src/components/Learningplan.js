@@ -1,40 +1,11 @@
-import React ,{useEffect} from 'react' 
-import {Link, Outlet} from 'react-router-dom'
-import './Dashboard.css';
-import {app} from '../Firebase'
-import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
-import{ useNavigate } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Dashboard = () => {
-  const navigate = useNavigate('')
-  const Logout =()=>{
-    const auth = getAuth(app)
-    signOut(auth).then(res=>{
-      navigate('/login')
-    })
-  }
-
-  useEffect(()=>{
-    const auth = getAuth(app)
-    const unsubscribe= onAuthStateChanged(auth , (user)=>{
-      if(user){
-        console.log('yes login' , user)
-      }
-      else{
-        console.log('not login')
-      }
-    })
-    return ()=> unsubscribe();
-  },[])
+const Learningplan = () => {
   return (
-       
-      <div className="main">
-      {/* <div className="sidebar">
-               <Link to='/dashboard/studentlist' style={{ color: 'blue', display: 'block' }}>student list</Link>
-        <Link to='/dashboard/addfaculty' style={{ color: 'blue', display: 'block' }}>add faculty</Link>
-        <Link to='/dashboard/facultylist' style={{ color: 'blue', display: 'block' }}>faculty list</Link>
-      </div>
-     */}
+    <div>
+       <div className="main">
+      
     
         
     <div className="desktop" >
@@ -42,12 +13,11 @@ const Dashboard = () => {
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
           
-          <div className="rectangle" ></div>
           <img className="img" src="img/rectangle-3.png" />
           <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
-          <div className="div" style={{ backgroundColor: 'lightblue' }}></div>
-          <p className="welcome-back-buddy">
-            <span className="span" style={{ color: '#00008B' }} >Welcome back, buddy</span> <span className="text-wrapper-2">:)</span>
+          <div className="div"></div>
+           <p className="welcome-back-buddy">
+            <span className="span">Lets make a plan</span> <span className="text-wrapper-2">!</span>
           </p>
           <div className="rectangle-2"></div>
           <div className="rectangle-2"></div>
@@ -59,16 +29,7 @@ const Dashboard = () => {
             <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
           <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
           <div className="rectangle-6"></div>
-          <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
-          <br/>
-          <br/>
-            <button type='button' onClick={Logout} style ={ {color: 'purple',
-               width: '130px',      // Set the width you want
-                padding: '10px',   // Optional: makes the button taller
-               fontSize: '1.1rem',
-               fontWeight: 'bold',  
-             }}>Log Out</button>
-          </div>
+          <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link></div>
           <div className="rectangle-7"></div>
           <div className="rectangle-8"></div>
           <div className="rectangle-9"></div>
@@ -80,6 +41,7 @@ const Dashboard = () => {
           <div className="rectangle-12"></div>
           <div className="rectangle-13"></div>
           <div className="rectangle-14"></div>
+         
           <div className="rectangle-15"></div>
           <img className="polygon" src="img/polygon-1.svg" />
           <div className="rectangle-16"></div>
@@ -108,11 +70,12 @@ const Dashboard = () => {
           <div className="text-wrapper-13">subject2</div>
           <div className="rectangle-32"></div>
           <div className="text-wrapper-14">subject 3</div>
-          <div className="text-wrapper-15"><h4>DASHBOARD</h4></div>
+          <div className="text-wrapper-15"><h4>LEARNING PLAN </h4></div>
           <div className="rectangle-33"></div>
           <div className="text-wrapper-16">date,day</div>
-          <div className="text-wrapper-17">latest result</div>
-          <div className="text-wrapper-18">more</div>
+          <div className="text-wrapper-17"><u>TO-DO LIST</u> </div>
+          <div className="text-wrapper-18">
+             <Link to ='/learningplan/addtask' style ={{color:'black', display: 'block'}}>+ add </Link> </div> </div>
           <div className="rectangle-34"></div>
           <div className="rectangle-35"></div>
           <div className="rectangle-36"></div>
@@ -142,31 +105,16 @@ const Dashboard = () => {
           <div className="rectangle-47"></div>
           <div className="rectangle-48"></div>
           <div className="ellipse-2"></div>
-          <p className="text-wrapper-29"><h2>you learned ----hrs and -----questions this week</h2></p>
+          <p className="text-wrapper-29"><h2>i hope you will complete it (૭ ｡•̀ ᵕ •́｡ )૭ </h2></p>
           <img className="profile" src="img/profile.svg" />
         </div>
         
         </div>
-     
-    
-    {/* <div style ={{display:'flex', flexDirection :'row'}}>
-    <div style ={{width :'20%', backgroundColor:'royalblue', height:'100vh'}}> 
-       
-      
-      <Link to ='/dashboard/studentlist' style ={{color:'white', display: 'block'}}>student list</Link>
-      <Link to ='/dashboard/addfaculty' style ={{color:'white', display: 'block'}}>add faculty</Link>
-      <Link to ='/dashboard/facultylist' style ={{color:'white', display: 'block'}}>faculty list</Link>
-    </div>
-    <div style ={{width :'80%', backgroundColor:'lightgray', height:'100vh'}}>
-        <Outlet/>
-    </div>
-    </div> */}
-      
       
     </div>
     </div>
-  
+   
   )
 }
 
-export default Dashboard
+export default Learningplan

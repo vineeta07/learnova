@@ -4,7 +4,7 @@ import {getDatabase , ref , update} from 'firebase/database'
 import {app} from '../Firebase'
 import { useNavigate , useLocation } from 'react-router-dom'
 
-const UpdateStudent=() =>  {
+const Updatetask=() =>  {
      const navigate = useNavigate()
     const location = useLocation()
     const [name , setName] = useState(location.state[1].studentname)
@@ -46,7 +46,7 @@ const UpdateStudent=() =>  {
         const studentRef = ref( db , 'student/' + location.state[0])
         update(studentRef ,{studentname : name , phonenumber : phone}) 
         .then( res =>{
-            navigate('/dashboard/studentlist')
+            navigate('/learning plan/tasklist')
         })
         .catch(err=>{
             console.log(err)
@@ -67,4 +67,4 @@ const UpdateStudent=() =>  {
     )
 }
 
-export default UpdateStudent
+export default Updatetask

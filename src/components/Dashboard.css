@@ -1,0 +1,1118 @@
+.resources-section {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+   margin-top: 0;
+  margin-left :18rem;
+}
+
+.resources-list {
+  display: flex;
+  flex-direction: row;  
+  align-items: flex-start;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.resource-card {
+  border: 1px solid hsl(175, 80%, 35%);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  background: #26c4ac;
+}
+
+
+
+.main{
+  display: flex;
+  flex-direction: row;
+}
+.sidebar{
+  background-color: #edeefe;
+    width: 40%;
+    height:100vh;
+  }
+
+.desktop {
+    background-color: #edeefe;
+    width: 80%;
+    height:100vh;
+  }
+  
+  .desktop .overlap-group-wrapper {
+    background-color: #edeefe;
+    /* overflow: hidden; */
+    width: 1524px;
+    height: 1024px;
+  }
+  
+  .desktop .overlap-group {
+    position: relative;
+    width: 1747px;
+    height: 1055px;
+    top: -1px;
+  }
+  
+  .desktop .rectangle {
+    position: absolute;
+    width: 1524px;
+    height: 1024px;
+    top: 31px;
+    left: 223px;
+    background-color: #eceefede;
+  }
+  
+  .desktop .img {
+    position: absolute;
+    width: 246px;
+    height: 1024px;
+    top: 1px;
+    left: 0;
+  }
+  
+  .desktop .text-wrapper {
+    position: absolute;
+    width: 147px;
+    top: 382px;
+    left: 54px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #acaede;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .div {
+    position: absolute;
+    width: 930px;
+    height: 221px;
+    top: 103px;
+    left: 296px;
+    background-color: #0b7b83c2 ;
+    border-radius: 50px;
+  }
+  
+  .desktop .welcome-back-buddy {
+    position: absolute;
+    top: 136px;
+    left: 352px;
+    font-family: "Nexa Rust Script B-Trial-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .span {
+    color: #cd3f2f;
+  }
+  
+  .desktop .text-wrapper-2 {
+    color: #000000;
+  }
+  
+  .desktop .rectangle-2 {
+    position: absolute;
+    width: 314px;
+    height: 132px;
+    top: 843px;
+    left: 280px;
+    background-color: #9192c7;
+    border-radius: 50px;
+  }
+  
+  .desktop .rectangle-3 {
+    position: absolute;
+    width: 277px;
+    height: 135px;
+    top: 840px;
+    left: 933px;
+    background-color: #d18888;
+    border-radius: 50px;
+  }
+  
+  .desktop .rectangle-4 {
+    position: absolute;
+    width: 255px;
+    height: 135px;
+    top: 840px;
+    left: 632px;
+    background-color: #7cc3d7;
+    border-radius: 50px;
+  }
+  
+  .desktop .rectangle-5 {
+    position: absolute;
+    width: 262px;
+    height: 1024px;
+    top: 0;
+    left: 1267px;
+    background-color: #fefeff;
+    border-radius: 50px 0px 0px 50px;
+  }
+  
+  .desktop .text-wrapper-3 {
+    position: absolute;
+    width: 178px;
+    top: 199px;
+    left: 59px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-4 {
+    position: absolute;
+    top: 301px;
+    left: 59px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #a6a9d4;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-6 {
+    position: absolute;
+    width: 198px;
+    height: 298px;
+    top: 677px;
+    left: 17px;
+    background-color: #dad3d375;
+    border-radius: 50px 50px 50px 0px;
+  }
+  
+  .desktop .text-wrapper-5 {
+    position: absolute;
+    top: 458px;
+    left: 47px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #acafde;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-7 {
+    position: absolute;
+    width: 148px;
+    height: 153px;
+    top: 785px;
+    left: 43px;
+    background-color: #ffffff;
+    border-radius: 50px 50px 50px 0px;
+  }
+  
+  .desktop .rectangle-8 {
+    position: absolute;
+    width: 362px;
+    height: 428px;
+    top: 354px;
+    left: 308px;
+    background-color: #f5f0f0;
+    border-radius: 40px;
+    box-shadow: 5px 4px 4px #00000040;
+  }
+  
+  .desktop .rectangle-9 {
+    position: absolute;
+    width: 525px;
+    height: 428px;
+    top: 345px;
+    left: 704px;
+    background-color: #f5f1f1;
+    border-radius: 40px;
+    box-shadow: 4px 4px 4px #00000040;
+  }
+  
+  .desktop .p {
+    position: absolute;
+    top: 350px;
+    left: 728px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-6 {
+    position: absolute;
+    top: 401px;
+    left: 1056px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-7 {
+    position: absolute;
+    top: 401px;
+    left: 1127px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-10 {
+    position: absolute;
+    width: 10px;
+    height: 241px;
+    top: 448px;
+    left: 836px;
+    background-color: #ffffff;
+  }
+  
+  .desktop .rectangle-11 {
+    position: absolute;
+    width: 10px;
+    height: 241px;
+    top: 448px;
+    left: 912px;
+    background-color: #ffffff;
+  }
+  
+  .desktop .rectangle-12 {
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    top: 467px;
+    left: 912px;
+    background-color: #e52929;
+  }
+  
+  .desktop .rectangle-13 {
+    position: absolute;
+    width: 15px;
+    height: 241px;
+    top: 448px;
+    left: 988px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .rectangle-14 {
+    position: absolute;
+    width: 15px;
+    height: 241px;
+    top: 446px;
+    left: 1064px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .image {
+    position: absolute;
+    width: 397px;
+    height: 262px;
+    top: 40px;
+    left: 743px;
+  }
+  
+  .desktop .rectangle-15 {
+    position: absolute;
+    width: 69px;
+    height: 33px;
+    top: 79px;
+    left: 1011px;
+    background-color: #d96969;
+    border-radius: 6px;
+  }
+  
+  .desktop .polygon {
+    position: absolute;
+    width: 8px;
+    height: 7px;
+    top: 111px;
+    left: 1020px;
+  }
+  
+  .desktop .rectangle-16 {
+    position: absolute;
+    width: 16px;
+    height: 15px;
+    top: 88px;
+    left: 1017px;
+    background-color: #fffefe82;
+    border-radius: 3px;
+  }
+  
+  .desktop .rectangle-17 {
+    position: absolute;
+    width: 34px;
+    height: 3px;
+    top: 90px;
+    left: 1039px;
+    background-color: #fffefe8c;
+  }
+  
+  .desktop .rectangle-18 {
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    top: 99px;
+    left: 1040px;
+    background-color: #ffffff8f;
+  }
+  
+  .desktop .rectangle-19 {
+    position: absolute;
+    width: 246px;
+    height: 5px;
+    top: 259px;
+    left: 802px;
+    background-color: #ec5656;
+    border-radius: 2px;
+  }
+  
+  .desktop .rectangle-20 {
+    position: absolute;
+    width: 104px;
+    height: 69px;
+    top: 190px;
+    left: 873px;
+    background-color: #d8dcf0;
+    border-radius: 4px;
+  }
+  
+  .desktop .ellipse {
+    position: absolute;
+    width: 17px;
+    height: 13px;
+    top: 218px;
+    left: 916px;
+    background-color: #ffffff;
+    border-radius: 8.5px / 6.5px;
+  }
+  
+  .desktop .rectangle-21 {
+    position: absolute;
+    width: 10px;
+    height: 241px;
+    top: 448px;
+    left: 760px;
+    background-color: #ffffff;
+  }
+  
+  .desktop .rectangle-22 {
+    position: absolute;
+    width: 15px;
+    height: 241px;
+    top: 446px;
+    left: 1140px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .rectangle-23 {
+    position: absolute;
+    width: 10px;
+    height: 53px;
+    top: 513px;
+    left: 760px;
+    background-color: #e52929;
+  }
+  
+  .desktop .rectangle-24 {
+    position: absolute;
+    width: 10px;
+    height: 66px;
+    top: 482px;
+    left: 836px;
+    background-color: #e52929;
+  }
+  
+  .desktop .rectangle-25 {
+    position: absolute;
+    width: 10px;
+    height: 53px;
+    top: 636px;
+    left: 760px;
+    background-color: #43b6e3;
+  }
+  
+  .desktop .rectangle-26 {
+    position: absolute;
+    width: 10px;
+    height: 159px;
+    top: 528px;
+    left: 912px;
+    background-color: #43b6e3;
+  }
+  
+  .desktop .rectangle-27 {
+    position: absolute;
+    width: 10px;
+    height: 79px;
+    top: 566px;
+    left: 760px;
+    background-color: #4f47aa;
+  }
+  
+  .desktop .rectangle-28 {
+    position: absolute;
+    width: 10px;
+    height: 41px;
+    top: 492px;
+    left: 912px;
+    background-color: #4f47aa;
+  }
+  
+  .desktop .rectangle-29 {
+    position: absolute;
+    width: 10px;
+    height: 139px;
+    top: 548px;
+    left: 836px;
+    background-color: #4f47aa;
+  }
+  
+  .desktop .text-wrapper-8 {
+    position: absolute;
+    top: 401px;
+    left: 742px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-9 {
+    position: absolute;
+    top: 401px;
+    left: 819px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-10 {
+    position: absolute;
+    top: 401px;
+    left: 897px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-11 {
+    position: absolute;
+    top: 401px;
+    left: 966px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-30 {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 724px;
+    left: 748px;
+    background-color: #e52929;
+  }
+  
+  .desktop .text-wrapper-12 {
+    position: absolute;
+    top: 709px;
+    left: 770px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-31 {
+    position: absolute;
+    width: 15px;
+    height: 14px;
+    top: 724px;
+    left: 882px;
+    background-color: #43b6e4;
+  }
+  
+  .desktop .text-wrapper-13 {
+    position: absolute;
+    top: 708px;
+    left: 905px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-32 {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 724px;
+    left: 1010px;
+    background-color: #4f47aa;
+  }
+  
+  .desktop .text-wrapper-14 {
+    position: absolute;
+    top: 709px;
+    left: 1035px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-15 {
+    position: absolute;
+    top: 37px;
+    left: 328px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-33 {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 28px;
+    left: 1178px;
+    background-color: #9ba7f5;
+    border-radius: 10px;
+  }
+  
+  .desktop .text-wrapper-16 {
+    position: absolute;
+    top: 37px;
+    left: 1065px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #9c9db1;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-17 {
+    position: absolute;
+    top: 374px;
+    left: 342px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-18 {
+    position: absolute;
+    top: 376px;
+    left: 594px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-34 {
+    position: absolute;
+    width: 354px;
+    height: 4px;
+    top: 478px;
+    left: 312px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .rectangle-35 {
+    position: absolute;
+    width: 354px;
+    height: 4px;
+    top: 539px;
+    left: 308px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .rectangle-36 {
+    position: absolute;
+    width: 354px;
+    height: 4px;
+    top: 600px;
+    left: 308px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .rectangle-37 {
+    position: absolute;
+    width: 354px;
+    height: 4px;
+    top: 661px;
+    left: 312px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .rectangle-38 {
+    position: absolute;
+    width: 354px;
+    height: 4px;
+    top: 720px;
+    left: 312px;
+    background-color: #d9d9d9;
+  }
+  
+  .desktop .text-wrapper-19 {
+    top: 428px;
+    position: absolute;
+    left: 319px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #a53434;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-20 {
+    top: 496px;
+    position: absolute;
+    left: 319px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #a53434;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-21 {
+    top: 555px;
+    position: absolute;
+    left: 319px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #a53434;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-22 {
+    top: 618px;
+    position: absolute;
+    left: 319px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #a53434;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-23 {
+    top: 675px;
+    position: absolute;
+    left: 319px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #a53434;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-24 {
+    position: absolute;
+    top: 430px;
+    left: 380px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #4f47aa;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-25 {
+    position: absolute;
+    top: 499px;
+    left: 380px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #4f47aa;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-26 {
+    position: absolute;
+    top: 555px;
+    left: 380px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #4f47aa;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .python-prog {
+    position: absolute;
+    top: 675px;
+    left: 382px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .text-wrapper-27 {
+    color: #4f47aa;
+  }
+  
+  .desktop .text-wrapper-28 {
+    position: absolute;
+    top: 621px;
+    left: 380px;
+    font-family: "Gang of Three-Regular", Helvetica;
+    font-weight: 400;
+    color: #4f47aa;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 44px;
+    white-space: nowrap;
+  }
+  
+  .desktop .rectangle-39 {
+    position: absolute;
+    width: 108px;
+    height: 7px;
+    top: 448px;
+    left: 545px;
+    background-color: #fffefe;
+  }
+  
+  .desktop .rectangle-40 {
+    position: absolute;
+    width: 108px;
+    height: 7px;
+    top: 516px;
+    left: 545px;
+    background-color: #fffefe;
+  }
+  
+  .desktop .rectangle-41 {
+    position: absolute;
+    width: 108px;
+    height: 7px;
+    top: 571px;
+    left: 545px;
+    background-color: #fffefe;
+  }
+  
+  .desktop .rectangle-42 {
+    position: absolute;
+    width: 108px;
+    height: 7px;
+    top: 634px;
+    left: 545px;
+    background-color: #fffefe;
+  }
+  
+  .desktop .rectangle-43 {
+    position: absolute;
+    width: 108px;
+    height: 7px;
+    top: 691px;
+    left: 545px;
+    background-color: #fffefe;
+  }
+  
+  .desktop .rectangle-44 {
+    position: absolute;
+    width: 6px;
+    height: 25px;
+    top: 438px;
+    left: 556px;
+    background-color: #43b6e3;
+    transform: rotate(90deg);
+  }
+  
+  .desktop .rectangle-45 {
+    position: absolute;
+    width: 6px;
+    height: 40px;
+    top: 675px;
+    left: 562px;
+    background-color: #43b6e3;
+    transform: rotate(90deg);
+  }
+  
+  .desktop .rectangle-46 {
+    position: absolute;
+    width: 7px;
+    height: 91px;
+    top: 474px;
+    left: 583px;
+    background-color: #e52929;
+    transform: rotate(90deg);
+  }
+  
+  .desktop .rectangle-47 {
+    position: absolute;
+    width: 7px;
+    height: 73px;
+    top: 538px;
+    left: 578px;
+    background-color: #e52929;
+    transform: rotate(90deg);
+  }
+  
+  .desktop .rectangle-48 {
+    position: absolute;
+    width: 6px;
+    height: 57px;
+    top: 610px;
+    left: 570px;
+    background-color: #4f47aa;
+    transform: rotate(90deg);
+  }
+  
+  .desktop .ellipse-2 {
+    position: absolute;
+    width: 166px;
+    height: 152px;
+    top: 142px;
+    left: 1312px;
+    background-color: #eceaea;
+    border-radius: 83px / 76px;
+  }
+  
+  .desktop .text-wrapper-29 {
+    position: absolute;
+    top: 218px;
+    left: 352px;
+    font-family: "Nexa Rust Slab-Trial-Black3", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .desktop .profile {
+    position: absolute;
+    width: 162px;
+    height: 160px;
+    top: 134px;
+    left: 1312px;
+  }
+  /* Original CSS code should be injected here */
+  
+  /* Additional styles for refactored HTML */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .sidebar {
+    position: relative;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .latest-results {
+    position: relative;
+  }
+  
+  .results-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .results-list li {
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    background-color: #fffefe;
+    height: 7px;
+    width: 108px;
+    margin-top: 5px;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #43b6e3;
+  }
+  
+  .learning-time {
+    position: relative;
+  }
+  
+  .chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    height: 241px;
+    margin-bottom: 10px;
+  }
+  
+  .bar {
+    width: 10px;
+    margin: 0 5px;
+    background-color: #e52929;
+  }
+  
+  .chart-labels {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .legend {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .color-box {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+  }
+  
+  .subject1 {
+    background-color: #e52929;
+  }
+  .subject2 {
+    background-color: #43b6e4;
+  }
+  .subject3 {
+    background-color: #4f47aa;
+  }
+  
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .right-sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+  
+  .summary-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 30%;
+    height: 132px;
+    border-radius: 50px;
+  }
+  

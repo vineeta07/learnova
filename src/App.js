@@ -1,15 +1,19 @@
-
+import React from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
-import StudentList from './components/StudentList';
-import AddStudent from './components/AddStudent';
-import UpdateStudent from './components/UpdateStudent'; // Import the UpdateStudent component
+
 import AddFaculty from './components/AddFaculty';
 import FacultyList from './components/FacultyList';
 import UpdateFaculty from './components/UpdateFaculty';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Resources from './components/Resources'; 
+import Subject from './components/subject'; // Import the subject component 
+import Learningplan from './components/Learningplan'; 
+import Addtask from './components/Addtask';
+import Tasklist from './components/Tasklist';
+import Updatetask from './components/Updatetask';
 
 
 const myRouter = createBrowserRouter([
@@ -17,22 +21,32 @@ const myRouter = createBrowserRouter([
   {path: 'login' , element: <Login/>},
   {
     path: 'dashboard',element: <Dashboard />, children: [
-      { path: '', element: <StudentList /> }, // Changed from Component to element
-      { path: 'addstudent', element: <AddStudent /> }, // Changed from Component to element
-      { path: 'studentlist', element: <StudentList /> }, // Changed from Component to element
-      { path: 'updatestudent' , element : <UpdateStudent/>},
+
+      
       {path: 'addfaculty', element: <AddFaculty/>}, 
       {path: 'facultylist', element: <FacultyList/>},
-      {path: 'updatefaculty', element: <UpdateFaculty/>}
-  ]}
+      {path: 'updatefaculty', element: <UpdateFaculty/>},
+      { path: '*', element: <div>404 Not Found</div> }
+  ]},
+  { path: 'resources', element: <Resources/>},
+  { path: 'subject', element: <Subject/> },
+   { path: 'learningplan', element: <Learningplan/> , children:[
+    { path: '', element: <Tasklist /> }, 
+    { path: 'addtask', element: <Addtask /> },
+    {path:'tasklist', element:<Tasklist/>},
+    {path: 'updatetask', element: <Updatetask /> } 
+   ] }
+
 ])
     
 function App() {
   return (
     
       <RouterProvider router={myRouter} />
+      
 
   );
+
 }
 
 export default App;
