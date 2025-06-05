@@ -22,6 +22,7 @@ const Signup = () => {
         })
     }
   return (
+    <div className='Background'>
     <div className='login_page'>
       <h1>SIGNUP</h1>
       <form onSubmit = {submitHandler} className='login_form'>
@@ -29,6 +30,7 @@ const Signup = () => {
         <input onChange ={(e)=>{setpassword(e.target.value)}} type = 'password' placeholder = 'password' className='input_box'/>
         <button type = 'submit' className='Submit_button'>Submit</button>
       </form>
+    </div>
     </div>
   )
 }
