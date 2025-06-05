@@ -39,7 +39,7 @@
   }
 
 .desktop {
-    background-color: #edeefe;
+    background-color: hsl(236, 89%, 96%);
     width: 80%;
     height:100vh;
   }

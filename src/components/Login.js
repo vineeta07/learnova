@@ -2,6 +2,7 @@ import React , {useState , useRef} from 'react'
 import {getAuth , signInWithEmailAndPassword,signInWithPopup ,GoogleAuthProvider, GithubAuthProvider, signInWithPhoneNumber, RecaptchaVerifier} from 'firebase/auth'
 import{app} from '../Firebase'
 import {useNavigate} from 'react-router-dom'
+import './Login.css';
 
 const Login = () => {
     const[email , setemail] = useState('')
@@ -82,26 +83,26 @@ const Login = () => {
     }
 
   return (
-    <div>
+    <div className='login_page'>
       <h1>Login</h1>
-      <form onSubmit = {submitHandler}>
-        <input onChange ={(e)=>{setemail(e.target.value)}} type = 'email' placeholder ='email'/>
-        <input onChange ={(e)=>{setpassword(e.target.value)}} type = 'password' placeholder = 'password'/>
-        <button type = 'submit'>Submit</button>
+      <form onSubmit = {submitHandler} className='login_form'>
+        <input onChange ={(e)=>{setemail(e.target.value)}} type = 'email' placeholder ='email'  className='input_box'/>
+        <br/>
+        <input onChange ={(e)=>{setpassword(e.target.value)}} type = 'password' placeholder = 'password' className='input_box'/>
+        <br/>
+        <button type = 'submit' className='Submit_button' >Submit</button>
         <br/>   
         <br/>
-        <button type ='button' onClick={loginwithgoogle}>login with Google </button>
-        <br/>
+        <button type ='button' onClick={loginwithgoogle} className='login_through'>login with Google </button>
+        <button type ='button' onClick = {loginwithgithub}  className='login_through'>login with Github</button>   
         
-        <button type ='button' onClick = {loginwithgithub} style={{ marginTop: '16px' }}>login with Github</button>   
-        <br/>
         
         
           {!isOTP ? (
             <button
                 type="button"
                 onClick={() => setisOTP(true)}
-                style={{ marginTop: '1rem' }}
+                className='login_through'
             >
                 Login with Phone
             </button>
