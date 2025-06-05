@@ -30,7 +30,7 @@
     height: 30px;
     width: 40%; 
     margin-left: 30%;
-    background-color: hsl(58, 31%, 47%);
+    background-color: hsl(58, 31%, 49%);
 }
 .Submit_button:hover{
      background-color: rgb(238, 247, 146);
