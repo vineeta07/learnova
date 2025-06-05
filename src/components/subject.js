@@ -32,7 +32,7 @@ const subjectCardStyle = {
   borderRadius: '10px',
   padding: '1.5rem',
   minWidth: '220px',
-  background: 'hsl(249, 50.20%, 39.40%)4)',
+  background: '#4d3ea24)',
   boxShadow: '0 2px 8px rgb(220, 185, 185)',
   marginBottom: '1rem'
 };
