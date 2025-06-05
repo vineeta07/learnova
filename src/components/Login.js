@@ -4,6 +4,7 @@ import{app} from '../Firebase'
 import {useNavigate} from 'react-router-dom'
 import './Login.css';
 
+
 const Login = () => {
     const[email , setemail] = useState('')
     const[password , setpassword] = useState('')
@@ -83,6 +84,7 @@ const Login = () => {
     }
 
   return (
+    <div className='Background'>
     <div className='login_page'>
       <h1>Login</h1>
       <form onSubmit = {submitHandler} className='login_form'>
@@ -136,6 +138,7 @@ const Login = () => {
             )} 
                 </form>
                 
+                </div>
                 </div>
             )
             }
