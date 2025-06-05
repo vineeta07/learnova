@@ -1,8 +1,175 @@
-import React from 'react'
+import React ,{ useState ,useEffect } from 'react'
 import {Link, Outlet} from 'react-router-dom'
+import {app} from '../Firebase'
+import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
+import{ useNavigate } from 'react-router-dom'
+
+const resourcesSectionStyle = {
+  width: '50%',
+  display: 'flex',
+  flexDirection: 'row',
+ 
+  justifyContent: 'flex-start',
+  marginTop: 0,
+  marginLeft: '20rem',
+  
+};
+
+const subjectsContainerStyle = {
+   display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+   marginTop: '10rem',
+  flexWrap: 'wrap',
+  gap: '2rem',
+  width: '100%',
+  justifyContent: 'flex-start'
+};
 
 
-const subject = () => {
+const subjectCardStyle = {
+  border: '1px solid rgb(16, 17, 1)17, 2)',
+  borderRadius: '10px',
+  padding: '1.5rem',
+  minWidth: '220px',
+  background: 'hsl(249, 50.20%, 39.40%)4)',
+  boxShadow: '0 2px 8px rgb(220, 185, 185)',
+  marginBottom: '1rem'
+};
+
+
+const subjects = [
+  {
+    id: 1,
+    name: 'Mathematics',
+    code: 'AM101',
+    syllabus: [
+      'Unit 1: Calculus',
+      'Unit 2: Linear Algebra',
+      'Unit 3: Differential Equations'
+    ],
+     link: 'https://youtu.be/ZSPZob_1TOk?si=u7mOydMt3u6kwN3L',
+
+  },
+  {
+    id: 2,
+    name: 'Programming Fundamentals',
+    code: 'CS101',
+    syllabus: [
+      'Unit 1: Basics of C',
+      'Unit 2: Control Structures',
+      'Unit 3: Functions and Arrays'
+    ]
+  },
+  {
+    id: 3,
+    name: 'Complex Analysis',
+    code: 'MA201',
+    syllabus: [
+      'Unit 1: Complex Numbers',
+      'Unit 2: Analytic Functions',
+      'Unit 3: Contour Integration'
+    ]
+  },
+  {
+    id: 4,
+    name: 'Discrete Mathematics',
+    code: 'CS102',
+    syllabus: [
+      'Unit 1: Set Theory',
+      'Unit 2: Graph Theory',
+      'Unit 3: Combinatorics'
+    ]
+  },
+   {
+    id: 5,
+     name: 'Physics',
+    code: 'AP101',
+    syllabus: [
+      'Unit 1: Mechanics',
+      'Unit 2: Thermodynamics',
+      'Unit 3: Electromagnetism'
+    ]
+  },
+   {
+    id: 6,
+    name: 'Data Structures',
+    code: 'CS201',
+    syllabus: [
+      'Unit 1: Arrays and Linked Lists',
+      'Unit 2: Stacks and Queues',
+      'Unit 3: Trees and Graphs'
+    ]
+  },
+   {
+    id: 7,
+    name: 'Digital Electronics',
+    code: 'EE101',
+    syllabus: [
+      'Unit 1: Number Systems',
+      'Unit 2: Logic Gates',
+      'Unit 3: Flip-Flops and Counters'
+    ]
+  },
+    {
+    id: 8,
+    name: 'Environmental Science',
+    code: 'EVS101',
+    syllabus: [
+      'Unit 1: Ecosystems',
+      'Unit 2: Biodiversity',
+      'Unit 3: Environmental Pollution'
+    ]
+  },
+    {
+    id: 9,
+    name: 'Engineering Drawing',
+    code: 'ED101',
+    syllabus: [
+      'Unit 1: Orthographic Projections',
+      'Unit 2: Isometric Views',
+      'Unit 3: Sectional Views'
+    ]
+  },
+    {
+      id: 10,
+    name: 'Chemistry',
+    code: 'CHEM101',
+    syllabus: [
+      'Unit 1: Atomic Structure',
+      'Unit 2: Chemical Bonding',
+      'Unit 3: Organic Chemistry'
+    ]
+  }
+];
+
+
+const Subject = () => {
+  const [openSyllabus, setOpenSyllabus] = useState(null);
+
+  const handleToggle = (id) => {
+    setOpenSyllabus(openSyllabus === id ? null : id);
+  };
+   const navigate = useNavigate('')
+  const Logout =()=>{
+    const auth = getAuth(app)
+    signOut(auth).then(res=>{
+      navigate('/login')
+    })
+  }
+
+  useEffect(()=>{
+    const auth = getAuth(app)
+    const unsubscribe= onAuthStateChanged(auth , (user)=>{
+      if(user){
+        console.log('yes login' , user)
+      }
+      else{
+        console.log('not login')
+      }
+    })
+    return ()=> unsubscribe();
+  },[])
   return (
     <div>
         
@@ -16,37 +183,90 @@ const subject = () => {
      
                 <img className="img" src="img/rectangle-3.png" />
                 <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
-              
+               <div style={resourcesSectionStyle}>
+               <div style={subjectsContainerStyle}>
+                  {subjects.map(sub => (
+                    <div key={sub.id} style={subjectCardStyle}>
+                      <strong>{sub.name}</strong> <br />
+                      <span style={{ color: '#555' }}>{sub.code}</span>
+                      <br />
+                      <button
+                        style={{
+                          marginTop: '1rem',
+                          background: '#1976d2',
+                          color: '#fff',
+                          border: 'none',
+                          borderRadius: '5px',
+                          padding: '6px 14px',
+                          cursor: 'pointer'
+                        }}
+                        onClick={() => handleToggle(sub.id)}
+                      >
+                        {openSyllabus === sub.id ? 'Hide Syllabus' : 'View Syllabus'}
+                      </button>
+                      {openSyllabus === sub.id && (
+                        <ul style={{
+                          marginTop: '1rem',
+                          paddingLeft: '1.2rem'
+                        }}>
+                          {sub.syllabus.map((topic, idx) => (
+                            <li key={idx}>{topic}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
                
-                <div className="rectangle-2"></div>
-                <div className="rectangle-3"></div>
-                <div className="rectangle-4"></div>
+               
                 <div className="rectangle-5"></div>
                  
                 <div className="text-wrapper-3"> 
                   <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
                 <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
                 <div className="rectangle-6"></div>
-                <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link></div>
+                <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
+                <br/>
+                <br/>
+                  <button type='button' onClick={Logout} style ={ {color: 'purple',
+                    width: '130px',      // Set the width you want
+                      padding: '10px',   // Optional: makes the button taller
+                    fontSize: '1.1rem',
+                    fontWeight: 'bold',  
+                  }}>Log Out</button>
+                </div>
+                </div>
+                      
                 <div className="rectangle-7"></div>
                 <div className="text-wrapper-15">
-                    <h4>SUBJECT</h4></div>
+                    <h4>SUBJECTS</h4></div>
+                  
+                 
+              
+
                 <div className="rectangle-33"></div>
                 <div className="text-wrapper-16">date,day</div>
                 <div className="ellipse-2"></div>
                 
                 <img className="profile" src="img/profile.svg" />
-              </div>
+
+                  
               
               </div>
-           
+              
+           </div>
+                  </div>
+            
+              </div>    
+              
           
-            
-            
-          </div>
-          </div>
-    </div>
+          
+          
+          
+  
   )
 }
 
-export default subject
+export default Subject
+ 
