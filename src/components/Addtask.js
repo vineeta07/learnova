@@ -29,8 +29,8 @@ const Addtask=() =>  {
         const imageURL = await getDownloadURL(myRef)
  */
         set(ref(db , 'student/'+ Taskno ),{
-            setTask : task,
-            setSub : sub,
+            task : task,
+            subject : sub,
             //imageURL : imageURL
         })
         .then( res =>{
