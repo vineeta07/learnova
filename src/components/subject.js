@@ -3,8 +3,13 @@ import {Link, Outlet} from 'react-router-dom'
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+<<<<<<< HEAD
 import Logo from '../images/Logo.png'; // Adjust the path to your logo image
 import ChatIcon from './ChatIcon';
+=======
+import ChatIcon from './ChatIcon';
+
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
 
 const resourcesSectionStyle = {
   width: '50%',
@@ -252,9 +257,13 @@ const Subject = () => {
                 </div>
                 </div>
                       
+<<<<<<< HEAD
                 <div className="rectangle-7">
                    <ChatIcon />
                 </div>
+=======
+                <div className="rectangle-7"><ChatIcon /></div>
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
                 <div className="text-wrapper-15">
                   
                  

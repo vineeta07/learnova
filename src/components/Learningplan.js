@@ -4,8 +4,11 @@ import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
 import ChatIcon from './ChatIcon';
+<<<<<<< HEAD
 import Logo from '../images/Logo.png'; // Adjust the path to your logo image
 import PfpChanger from './PfpChanger';
+=======
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
 
 
 const Learningplan = () => {
@@ -63,7 +66,12 @@ const Learningplan = () => {
           <div className="rectangle-2"></div>
           <div className="rectangle-3"></div>
           <div className="rectangle-4"></div>
-          <div className="rectangle-5"></div>
+          <div className="rectangle-5">
+            <div className="inside-rectangle-5">
+              <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_EzPrWM.json" background="transparent" speed="1" loop autoplay
+              style={{ width: "100%", height: "100%" }}></lottie-player>
+            </div>
+          </div>
               
           <div className="text-wrapper-3"> 
             <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
@@ -79,12 +87,16 @@ const Learningplan = () => {
                fontWeight: 'bold',  
              }}>Log Out</button>
           </div>
+<<<<<<< HEAD
            
           <div className="rectangle-7">
              <ChatIcon />
           </div>
 
           
+=======
+          <div className="rectangle-7"><ChatIcon /></div>
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
           <div className="rectangle-8"></div>
           <div className="rectangle-9"></div>
           <p className="p">Today's tasks
@@ -102,9 +114,16 @@ const Learningplan = () => {
           <div className="rectangle-17"></div>
           <div className="rectangle-18"></div>
           <div className="rectangle-19"></div>
+<<<<<<< HEAD
           
           <div className="rectangle-20"></div>
           
+=======
+          <div className="rectangle-20">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" loop autoplay 
+              style={{ width: "100%", height: "100%" }}></lottie-player>
+          </div>
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
           <div className="ellipse"></div>
           
           <div className="text-wrapper-15" style={{ margintop:'10px'}}><h4>LEARNING PLAN</h4></div>

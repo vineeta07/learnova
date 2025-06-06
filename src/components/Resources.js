@@ -4,8 +4,13 @@ import './Dashboard.css'
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+<<<<<<< HEAD
 import Logo from '../images/Logo.png';
 import ChatIcon from './ChatIcon';
+=======
+import ChatIcon from './ChatIcon';
+
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
 
 const resourcesSectionStyle = {
   width: '60%',
@@ -140,7 +145,12 @@ const Resources = () => {
                     </div>
                     </div>
                       
-                      <div className="rectangle-5"></div>
+                      <div className="rectangle-5">
+                        <div className="inside-rectangle-5">
+                          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_EzPrWM.json" background="transparent" speed="1" loop autoplay
+                          style={{ width: "100%", height: "100%" }}></lottie-player>
+                        </div>
+                      </div>
                        
                       <div className="text-wrapper-3"> 
                         <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
@@ -159,9 +169,13 @@ const Resources = () => {
                       </div>
                       
                       
+<<<<<<< HEAD
                       <div className="rectangle-7">
                          <ChatIcon />
                       </div>
+=======
+                      <div className="rectangle-7"><ChatIcon /></div>
+>>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
                       <div className="text-wrapper-15">
                         <h4 style={{ textAlign: 'center', marginBottom: '2rem' ,  marginTop: '80px'  }}>RESOURCES</h4>
                         </div>

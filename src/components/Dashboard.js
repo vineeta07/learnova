@@ -60,7 +60,11 @@ const Dashboard = () => {
           <div className="rectangle-2"></div>
           <div className="rectangle-3"></div>
           <div className="rectangle-4"></div>
-          <div className="rectangle-5"></div>
+          <div className="rectangle-5">
+              <div className="inside-rectangle-5">
+                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_EzPrWM.json" background="transparent" speed="1" loop autoplay style={{ width: "100%", height: "100%" }}></lottie-player>
+              </div>
+          </div>
           <div className="text-wrapper-3"> 
             <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
           <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
@@ -98,8 +102,9 @@ const Dashboard = () => {
           <div className="rectangle-17"></div>
           <div className="rectangle-18"></div>
           <div className="rectangle-19"></div>
-          <div className="rectangle-20"></div>
-          <div className="ellipse"></div>
+          <div className="rectangle-20">
+            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" loop autoplay style={{ width: "100%", height: "100%" }}></lottie-player></div>
+          {/* <div className="ellipse"></div> */}
           <div className="rectangle-21"></div>
           <div className="rectangle-22"></div>
           <div className="rectangle-23"></div>
