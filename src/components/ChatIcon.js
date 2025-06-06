@@ -16,7 +16,7 @@ const ChatIcon = () => {
       {isOpen && (
         <div className="chat-popup">
           <iframe
-            src="http://localhost:5000/"
+            src="https://backend-chatbot-rr7y.onrender.com/"
             title="Chatbot"
             width="1050"
             height="700px"
