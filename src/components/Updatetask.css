@@ -1,4 +1,4 @@
-.addtask_container{
+.updatetask_container{
     height: 400px;
     width: 40%;
     border: 2px solid black;
@@ -9,19 +9,19 @@
     align-items: center;
     margin-top: 10%;
     margin-left: 29%;
-    background-color: hsl(209, 49%, 80%);
+    background-color: hsl(46, 58%, 69%);
 }
-.addtask_form{
+.updatetask_form{
     height:300px;
     width: 60%;
-    background-color: hsl(354, 35%, 78%);
+    background-color: hsl(149, 29%, 55%);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-bottom: 20px;
     box-shadow:  4px 4px 4px 4px #00000040;
 }
-.addtask_box{
+.updatetask_box{
     width:80%;
     margin: 5px 0 0 30px;
 }
@@ -30,8 +30,8 @@
     height: 30px;
     width: 40%; 
     margin-left: 30%;
-    background-color: hsl(64, 60%, 64%);
+    background-color: hsl(58, 31%, 49%);
 }
 .Submit_button:hover{
-     background-color: rgb(212, 30, 157);
+     background-color: rgb(238, 247, 146);
 }

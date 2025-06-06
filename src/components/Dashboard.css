@@ -23,7 +23,7 @@
   border-radius: 8px;
   padding: 1rem;
   width: 300px;
-  background: #813abf;
+  background: #26c4ac;
 }
 
 
@@ -39,7 +39,7 @@
   }
 
 .desktop {
-    background-color: hsl(236, 89%, 96%);
+    background-color: #edeefe;
     width: 80%;
     height:100vh;
   }
@@ -95,7 +95,7 @@
     height: 221px;
     top: 103px;
     left: 296px;
-    background-color: #0b7b83c2 ;
+    background-color:  rgb(237, 179, 189) ;
     border-radius: 50px;
   }
   

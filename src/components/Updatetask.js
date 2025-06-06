@@ -3,13 +3,14 @@ import {getDatabase , ref , update} from 'firebase/database'
 //import{getStorage , ref as storageRef, uploadBytes,getDownloadURL} from 'firebase/storage'
 import {app} from '../Firebase'
 import { useNavigate , useLocation } from 'react-router-dom'
+import './Updatetask.css';
 
 const Updatetask=() =>  {
      const navigate = useNavigate()
     const location = useLocation()
-    const [name , setName] = useState(location.state[1].studentname)
-    const [Admno , setAdmno] = useState(location.state[0] )
-    const[phone , setPhone] = useState(location.state[1].phonenumber)
+    const [sub , setSub] = useState(location.state[1].subject)
+    const [taskno , setTaskno] = useState(location.state[0] )
+    const[task , setTask] = useState(location.state[1].Task)
 
     //  const[selectedfile , setselectedfile] = useState(null)
     /*  const handleFileChange = (event) =>{
@@ -44,9 +45,9 @@ const Updatetask=() =>  {
         const db = getDatabase(app)
 
         const studentRef = ref( db , 'student/' + location.state[0])
-        update(studentRef ,{studentname : name , phonenumber : phone}) 
+        update(studentRef ,{subject : sub , Task : task}) 
         .then( res =>{
-            navigate('/learning plan/tasklist')
+            navigate('/learningplan')
         })
         .catch(err=>{
             console.log(err)
@@ -55,13 +56,13 @@ const Updatetask=() =>  {
        
     }
     return (
-        <div>
-           <form onSubmit={submitHandler}>
-            <input disabled value ={Admno} onChange = {(e)=> setAdmno(e.target.value)}  type ='text' placeholder='Adm no'/>
-            <input value = {name} onChange = {(e)=> setName(e.target.value)}  type ='text' placeholder='enter student name '/>
-            <input value = {phone} onChange ={(e) => setPhone(e.target.value)} type ='number' placeholder='enter phone number'/>
+        <div className='updatetask_container'>
+           <form onSubmit={submitHandler} className='updatetask_form'>
+            <input disabled value ={taskno} onChange = {(e)=> setTaskno(e.target.value)}  type ='text' placeholder='Task no' className='updatetask_box'/>
+            <input value = {sub} onChange = {(e)=> setSub(e.target.value)}  type ='text' placeholder='enter subject ' className='updatetask_box'/>
+            <input value = {task} onChange ={(e) => setTask(e.target.value)} type ='text' placeholder='enter your task' className='updatetask_box'/>
             {/* <input onChange = {handleFileChange} type = 'file'/> */}
-            <button type ='submit'>update</button>
+            <button type ='submit' className='Submit_button'>update</button>
            </form>
         </div>
     )

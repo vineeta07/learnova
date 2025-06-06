@@ -3,6 +3,7 @@ import { getDatabase, onValue , ref , remove} from 'firebase/database'
 import {getStorage , ref as storageref , deleteObject} from 'firebase/storage'
 import {app} from '../Firebase'
 import { useNavigate} from 'react-router-dom'
+import './Tasklist.css';
 
 const Tasklist = () => {
   const [studentdata , setstudentdata] = useState(null)
@@ -28,34 +29,33 @@ const Tasklist = () => {
 
     //const myRef = storageRef(storage ,'images/' + key )
     
-    /* deleteObject(myRef)
-    .then((ref) =>{
+   /* deleteObject(myRef)
+    .then((ref) =>{ */
       remove(studentRef)
-    })
+    //})
     .catch((err)=>{
       console.log(err)
-    }) */
+    }) 
   }
-  return (
-    <div>
-        <h1>Student List</h1>
-        {studentdata && (
-          <div> 
-            { Object.entries(studentdata).map ( ([key , value]) => {
-              return(
-              <div key ={key}>
-              {/*   <img style = {{width:'20%'}}src ={value.imageURL} */}
-                <p>{value.studentname} {value.phonenumber}</p>
-                <button onClick = {()=>{deletedata(key)}}> delete </button>
-                <button onClick = {()=>{navigate('/updatetask',{state :[key , value]})}}>Update</button>
-              </div>
-              )
-
-            })}
+return (
+  <div className="tasklist-container">
+    {studentdata && (
+      <div>
+        {Object.entries(studentdata).map(([key, value]) => (
+          <div key={key} className="tasklist-item">
+            <span>{value.subject} {value.Task}</span>
+              
+            
+            <span className="tasklist-actions">
+              <button onClick={() => deletedata(key)}>Delete</button>
+              <button onClick={() => navigate('/updatetask', { state: [key, value] })}>Update</button>
+            </span>
           </div>
-        )}
-    </div>
-  )
+        ))}
+      </div>
+    )}
+  </div>
+)
 }
 
 export default Tasklist

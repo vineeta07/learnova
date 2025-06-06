@@ -1,5 +1,5 @@
 import React , {useState , useRef} from 'react'
-import {getAuth , signInWithEmailAndPassword,signInWithPopup ,GoogleAuthProvider, GithubAuthProvider, signInWithPhoneNumber, RecaptchaVerifier} from 'firebase/auth'
+import {getAuth , linkWithCredential , signInWithEmailAndPassword,signInWithPopup ,GoogleAuthProvider, GithubAuthProvider, signInWithPhoneNumber, RecaptchaVerifier} from 'firebase/auth'
 import{app} from '../Firebase'
 import {useNavigate} from 'react-router-dom'
 import './Login.css';
@@ -12,6 +12,8 @@ const Login = () => {
     const recaptchaVerifier = useRef(null)
     const [isOTP , setisOTP] = useState(false)
     const [code , setcode] = useState('')
+    const [pendingCred, setPendingCred] = useState(null);
+    const [pendingEmail, setPendingEmail] = useState(''); // For storing pending credential
     const navigate = useNavigate()
     const submitHandler = (event)=>{
         event.preventDefault()
@@ -20,7 +22,20 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email , password)
         .then(userData=>{
             console.log(userData.user)
-            navigate('/dashboard')
+            if (pendingCred) {
+        linkWithCredential(userData.user, pendingCred)
+          .then(() => {
+            alert('Accounts linked! You can now log in with Google.');
+            setPendingCred(null); // Clear pending credential
+            navigate('/dashboard');
+          })
+          .catch(linkErr => {
+            console.log('Link error:', linkErr);
+            navigate('/dashboard');
+          });
+      } else {
+        navigate('/dashboard');
+      }
         })
         .catch(err=>{
             console.log(err)
@@ -34,10 +49,22 @@ const Login = () => {
             console.log(result)
             navigate('/dashboard')
         })
-        .catch(err=>{
-            console.log(err)
-        })
-
+        .catch(async err => {
+      if (err.code === 'auth/account-exists-with-different-credential') {
+        // Get the pending Google credential
+        const cred = GoogleAuthProvider.credentialFromError(err);
+            setPendingCred(cred); // <-- Store in state
+            setPendingEmail(err.customData.email); // Store the email for later use
+        // Fetch sign-in methods for this email
+        const methods = await auth.fetchSignInMethodsForEmail(email);
+        alert(
+          `An account already exists with the email ${email} using ${methods[0]}. Please log in with that method, then you can link Google from your profile settings.`
+        );
+        // Optionally, store pendingCred somewhere (e.g., in state) for linking after login
+      } else {
+        console.log(err);
+      }
+    });
     }
     
     const loginwithgithub =()=>{
@@ -48,9 +75,19 @@ const Login = () => {
             console.log(result)
             navigate('/dashboard')
         })
-        .catch(err=>{
-            console.log(err)
-        })
+        .catch(async err => {
+      if (err.code === 'auth/account-exists-with-different-credential') {
+        // Get the pending Google credential
+        const cred = GithubAuthProvider.credentialFromError(err);
+        setPendingCred(cred);
+        setPendingEmail(err.customData.email);
+        alert(
+          `An account already exists with the email ${err.customData.email}. Please log in with your original method to link Github.`
+        );
+      } else {
+        console.log(err);
+      }
+    });
 
     }
 
