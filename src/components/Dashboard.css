@@ -1,3 +1,4 @@
+
 .resources-section {
   width: 80%;
   display: flex;
@@ -47,26 +48,26 @@
   .desktop .overlap-group-wrapper {
     background-color: #edeefe;
     /* overflow: hidden; */
-    width: 1524px;
+    width: 1324px;
     height: 1024px;
   }
   
   .desktop .overlap-group {
     position: relative;
-    width: 1747px;
+    width: 1324px;
     height: 1055px;
     top: -1px;
   }
   
   .desktop .rectangle {
     position: absolute;
-    width: 1524px;
+    width: 1290px; 
+    /* width: 1750px; */
     height: 1024px;
     top: 31px;
     left: 223px;
-    background-color: #eceefede;
   }
-  
+
   .desktop .img {
     position: absolute;
     width: 246px;
@@ -152,12 +153,20 @@
   
   .desktop .rectangle-5 {
     position: absolute;
-    width: 262px;
+    width: 242px;
     height: 1024px;
     top: 0;
     left: 1267px;
     background-color: #fefeff;
     border-radius: 50px 0px 0px 50px;
+  }
+  .desktop .rectangle-5 .inside-rectangle-5 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: 822px;
+    left: 7px;
+    /* background-color:  #d8dcf0;   */
   }
   
   .desktop .text-wrapper-3 {
@@ -382,33 +391,36 @@
   
   .desktop .rectangle-19 {
     position: absolute;
-    width: 246px;
+    width: 286px;
     height: 5px;
-    top: 259px;
-    left: 802px;
+    top: 290px;
+    left: 852px;
     background-color: #ec5656;
     border-radius: 2px;
   }
   
   .desktop .rectangle-20 {
     position: absolute;
-    width: 104px;
-    height: 69px;
-    top: 190px;
+    /* width: 104px; */
+    /* height: 69px; */
+    width: 250px;
+    height: 150px;
+    top: 140px;
+    /* top: 190px; */
     left: 873px;
     background-color: #d8dcf0;
     border-radius: 4px;
   }
   
-  .desktop .ellipse {
-    position: absolute;
-    width: 17px;
-    height: 13px;
-    top: 218px;
-    left: 916px;
-    background-color: #ffffff;
-    border-radius: 8.5px / 6.5px;
-  }
+  /* .desktop .ellipse { */
+    /* position: absolute; */
+    /* width: 17px; */
+    /* height: 13px; */
+    /* top: 218px; */
+    /* left: 916px; */
+    /* background-color: #ffffff; */
+    /* border-radius: 8.5px / 6.5px; */
+  /* } */
   
   .desktop .rectangle-21 {
     position: absolute;

@@ -3,6 +3,8 @@ import {Link, Outlet} from 'react-router-dom'
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+import ChatIcon from './ChatIcon';
+
 
 const resourcesSectionStyle = {
   width: '50%',
@@ -238,7 +240,7 @@ const Subject = () => {
                 </div>
                 </div>
                       
-                <div className="rectangle-7"></div>
+                <div className="rectangle-7"><ChatIcon /></div>
                 <div className="text-wrapper-15">
                     <h4>SUBJECTS</h4></div>
                   
