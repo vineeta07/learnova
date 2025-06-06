@@ -4,6 +4,9 @@ import './Dashboard.css';
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+// import Chatbot from './Chatbot';
+import ChatIcon from './ChatIcon';
+
 
 const Dashboard = () => {
   const navigate = useNavigate('')
@@ -54,7 +57,6 @@ const Dashboard = () => {
           <div className="rectangle-3"></div>
           <div className="rectangle-4"></div>
           <div className="rectangle-5"></div>
-              
           <div className="text-wrapper-3"> 
             <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
           <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
@@ -69,7 +71,13 @@ const Dashboard = () => {
                fontWeight: 'bold',  
              }}>Log Out</button>
           </div>
-          <div className="rectangle-7"></div>
+          <div className="rectangle-7">
+                  
+                   {/* Your dashboard layout */}
+                  <ChatIcon />
+                  </div>
+                  
+          
           <div className="rectangle-8"></div>
           <div className="rectangle-9"></div>
           <p className="p">time spend on learning :</p>
@@ -108,7 +116,7 @@ const Dashboard = () => {
           <div className="text-wrapper-13">subject2</div>
           <div className="rectangle-32"></div>
           <div className="text-wrapper-14">subject 3</div>
-          <div className="text-wrapper-15"><h4>DASHBOARD</h4></div>
+          <div className="text-wrapper-15"><h4>DASHBOARD</h4></div>   
           <div className="rectangle-33"></div>
           <div className="text-wrapper-16">date,day</div>
           <div className="text-wrapper-17">latest result</div>
@@ -144,7 +152,7 @@ const Dashboard = () => {
           <div className="ellipse-2"></div>
           <p className="text-wrapper-29"><h2>you learned ----hrs and -----questions this week</h2></p>
           <img className="profile" src="img/profile.svg" />
-        </div>
+           </div>
         
         </div>
      

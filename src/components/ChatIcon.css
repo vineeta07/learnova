@@ -1,0 +1,28 @@
+.chat-icon {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 128px; 
+  height: 143px;
+  background : linear-gradient(135deg, #424d7f 0%, #7c1616 100%) ;
+  color: white;
+  border-radius: 50px 50px 50px 0px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1000;
+
+
+}
+
+.chat-popup {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  z-index: 1001;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
