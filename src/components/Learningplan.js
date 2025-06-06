@@ -3,6 +3,10 @@ import { Link, Outlet , } from 'react-router-dom'
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+import ChatIcon from './ChatIcon';
+import Logo from '../images/Logo.png'; // Adjust the path to your logo image
+import PfpChanger from './PfpChanger';
+
 
 const Learningplan = () => {
    const navigate = useNavigate()
@@ -38,7 +42,16 @@ const Learningplan = () => {
          
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
-          
+           <Link to="/dashboard" style={{ position: 'relative', zIndex: 10 }}>
+                                         <img src={Logo} alt="Logo" style={{
+                                            width: '200px',     /* Adjust as needed */
+                                           
+                                            
+                                                                  
+                                            marginLeft: '1.5rem',
+                                            
+                                                                        }} />
+                                       </Link>
           <div className="rectangle" ></div>
           <img className="img" src="img/rectangle-3.png" />
           <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
@@ -55,7 +68,7 @@ const Learningplan = () => {
           <div className="text-wrapper-3"> 
             <Link to ='/dashboard' style ={{color:'black', display: 'block'}}>Dashboard</Link> </div>
           <div className="text-wrapper-4">  <Link to='/subject' style={{ color: 'black', display: 'block' }}>Subject</Link></div>
-          <div className="rectangle-6"></div>
+          <div className="rectangle-6="></div>
           <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
           <br/>
           <br/>
@@ -66,7 +79,12 @@ const Learningplan = () => {
                fontWeight: 'bold',  
              }}>Log Out</button>
           </div>
-          <div className="rectangle-7"></div>
+           
+          <div className="rectangle-7">
+             <ChatIcon />
+          </div>
+
+          
           <div className="rectangle-8"></div>
           <div className="rectangle-9"></div>
           <p className="p">Today's tasks
@@ -84,10 +102,12 @@ const Learningplan = () => {
           <div className="rectangle-17"></div>
           <div className="rectangle-18"></div>
           <div className="rectangle-19"></div>
+          
           <div className="rectangle-20"></div>
+          
           <div className="ellipse"></div>
           
-          <div className="text-wrapper-15"><h4>DASHBOARD</h4></div>
+          <div className="text-wrapper-15" style={{ margintop:'10px'}}><h4>LEARNING PLAN</h4></div>
           <div className="rectangle-33"></div>
           
           <div className="text-wrapper-16">date,day</div>
@@ -120,17 +140,18 @@ const Learningplan = () => {
             <span className="text-wrapper-27">python prog</span> <span className="text-wrapper-2">.</span>
           </p>
           <div className="text-wrapper-28">am-102.</div>
-          <div className="tick-square" >&#10003;</div>
-          <div className="tick-square" >&#10003;</div>
-     
+       
           
           
         
          
          
-          <div className="ellipse-2"></div>
+          <div className="ellipse-2">
+            <PfpChanger/>
+          </div>
+          
           <p className="text-wrapper-29"><h2>i hope you will complete it  (૭ ｡•̀ ᵕ •́｡ )૭</h2></p>
-          <img className="profile" src="img/profile.svg" />
+          
         </div>
         
         </div>

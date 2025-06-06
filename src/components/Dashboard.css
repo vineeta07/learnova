@@ -8,6 +8,14 @@
   margin-left :18rem;
 }
 
+.logo-img {
+  width: 200px;      /* Adjust as needed */
+  height: auto;
+  margin-right: 10px; /* Adjust as needed */    
+  display: block;
+  margin-left: 20px; /* Adjust as needed */
+  display: block;
+}
 .resources-list {
   display: flex;
   flex-direction: row;  

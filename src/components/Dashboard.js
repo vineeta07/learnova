@@ -7,6 +7,7 @@ import{ useNavigate } from 'react-router-dom'
 // import Chatbot from './Chatbot';
 import ChatIcon from './ChatIcon';
 
+import Logo from '../images/Logo.png'; // Adjust the path to your logo image
 
 const Dashboard = () => {
   const navigate = useNavigate('')
@@ -44,7 +45,10 @@ const Dashboard = () => {
          
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
-          
+          <div>
+            <Link to="/dashboard">
+              <img src={Logo} alt="Logo" className="logo-img" />
+            </Link></div>
           <div className="rectangle" ></div>
           <img className="img" src="img/rectangle-3.png" />
           <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>

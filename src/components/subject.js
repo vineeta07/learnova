@@ -3,12 +3,14 @@ import {Link, Outlet} from 'react-router-dom'
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+import Logo from '../images/Logo.png'; // Adjust the path to your logo image
+import ChatIcon from './ChatIcon';
 
 const resourcesSectionStyle = {
   width: '50%',
   display: 'flex',
   flexDirection: 'row',
- 
+  paddingTop: 0 ,
   justifyContent: 'flex-start',
   marginTop: 0,
   marginLeft: '20rem',
@@ -19,7 +21,8 @@ const subjectsContainerStyle = {
    display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
-   marginTop: '10rem',
+   marginTop: 0,
+    paddingTop: 0 ,
   flexWrap: 'wrap',
   gap: '2rem',
   width: '100%',
@@ -179,8 +182,18 @@ const Subject = () => {
           <div className="desktop" >
                
             <div className="overlap-group-wrapper">
+              
               <div className="overlap-group">
-     
+                    <Link to="/dashboard" style={{ position: 'relative', zIndex: 10 }}>
+                                                                      <img src={Logo} alt="Logo" style={{
+                                                                         width: '200px',     /* Adjust as needed */
+                                                                        
+                                                                         
+                                                                                               
+                                                                         marginLeft: '1.5rem',
+                                                                         
+                                                                                                     }} />
+                                                                    </Link>
                 <img className="img" src="img/rectangle-3.png" />
                 <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
                <div style={resourcesSectionStyle}>
@@ -217,8 +230,9 @@ const Subject = () => {
                     </div>
                   ))}
                 </div>
+                   
               </div>
-               
+                
                
                 <div className="rectangle-5"></div>
                  
@@ -238,14 +252,17 @@ const Subject = () => {
                 </div>
                 </div>
                       
-                <div className="rectangle-7"></div>
+                <div className="rectangle-7">
+                   <ChatIcon />
+                </div>
                 <div className="text-wrapper-15">
-                    <h4>SUBJECTS</h4></div>
                   
                  
               
 
-                <div className="rectangle-33"></div>
+               
+                  <h4 style={{ marginTop: '80px' }}>SUBJECTS</h4></div>
+                   <div className="rectangle-33"></div>
                 <div className="text-wrapper-16">date,day</div>
                 <div className="ellipse-2"></div>
                 
@@ -256,6 +273,7 @@ const Subject = () => {
               </div>
               
            </div>
+           
                   </div>
             
               </div>    

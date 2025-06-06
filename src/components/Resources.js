@@ -4,6 +4,8 @@ import './Dashboard.css'
 import {app} from '../Firebase'
 import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
+import Logo from '../images/Logo.png';
+import ChatIcon from './ChatIcon';
 
 const resourcesSectionStyle = {
   width: '60%',
@@ -19,7 +21,7 @@ const resourcesListStyle = {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
-  marginTop: '10rem',
+  marginTop: 0,
   flexWrap: 'wrap',
   gap: '5rem',
   
@@ -103,7 +105,16 @@ const Resources = () => {
                      
                   <div className="overlap-group-wrapper">
                     <div className="overlap-group">
-           
+                      <Link to="/dashboard" style={{ position: 'relative', zIndex: 10 }}>
+                                                    <img src={Logo} alt="Logo" style={{
+                                                       width: '200px',     /* Adjust as needed */
+                                                      
+                                                       
+                                                                             
+                                                       marginLeft: '1.5rem',
+                                                       
+                                                                                   }} />
+                                                  </Link>
                       <img className="img" src="img/rectangle-3.png" />
                       <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
                     
@@ -148,9 +159,11 @@ const Resources = () => {
                       </div>
                       
                       
-                      <div className="rectangle-7"></div>
+                      <div className="rectangle-7">
+                         <ChatIcon />
+                      </div>
                       <div className="text-wrapper-15">
-                        <h4 style={{ textAlign: 'center', marginBottom: '2rem' }}>RESOURCES</h4>
+                        <h4 style={{ textAlign: 'center', marginBottom: '2rem' ,  marginTop: '80px'  }}>RESOURCES</h4>
                         </div>
                       <div className="rectangle-33"></div>
 
