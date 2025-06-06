@@ -7,7 +7,7 @@ import ChatIcon from './ChatIcon';
 
 
 const resourcesSectionStyle = {
-  width: '50%',
+  width: '70%',
   display: 'flex',
   flexDirection: 'row',
  

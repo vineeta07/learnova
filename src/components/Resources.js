@@ -8,7 +8,7 @@ import ChatIcon from './ChatIcon';
 
 
 const resourcesSectionStyle = {
-  width: '60%',
+  width: '100%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center', // align to left
