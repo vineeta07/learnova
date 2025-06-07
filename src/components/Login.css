@@ -9,12 +9,12 @@
     align-items: center;
     margin-top: 10%;
     margin-left: 29%;
-    background-color: hsl(236, 48%, 94%);
+    background-color: #32344d9c; 
 }
 .login_form{
     height:300px;
     width: 60%;
-    background-color: hsl(236, 89%, 96%);
+    background-color: #ecedfea3 ;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -47,9 +47,6 @@
     height: 810px;
     width: 1530px;
     position: absolute;
-    background-color: #49108b;
-    
-
-
+    background-color: #eae9fb;
 
 }
