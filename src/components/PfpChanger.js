@@ -68,7 +68,7 @@ function PfpChanger() {
   return (
     <div >
       <img
-        src={avatar || '/img/avatar4.png'}
+        src={avatar || '/img/avatar6.png'}
         alt="Profile"
         width={100}
         style={{ borderRadius: '50%', width:'200px', marginTop:'-20px',marginLeft:'-18px',objectFit: 'cover',allignItem:'flex-left', objectFit: 'cover', marginBottom: '0px',    border: avatar === '/img/avatar6.png' ? 'none' : '3px solid black' }}
