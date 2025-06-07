@@ -103,7 +103,9 @@ const Dashboard = () => {
           <div className="rectangle-17"></div>
           <div className="rectangle-18"></div>
           <div className="rectangle-19"></div>
-          <div className="rectangle-20">
+          <div className="rectangle-20" style={{
+         width: "200px", height:'140px', marginTop:'-70px', marginLeft:'-50px'
+          }}>
             <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" loop autoplay style={{ width: "100%", height: "100%" }}></lottie-player></div>
           {/* <div className="ellipse"></div> */}
           <div className="rectangle-21"></div>
