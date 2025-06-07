@@ -12,7 +12,7 @@ import PfpChanger from './PfpChanger'
 
 
 const resourcesSectionStyle = {
-  width: '100%',
+  width: '60%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center', // align to left
@@ -146,7 +146,9 @@ const Resources = () => {
                     </div>
                       
                       <div className="rectangle-5">
-                        <div className="inside-rectangle-5">
+                        <div className="inside-rectangle-5"style={{
+                marginTop: '750px',
+              }}>
                           <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_EzPrWM.json" background="transparent" speed="1" loop autoplay
                           style={{ width: "100%", height: "100%" }}></lottie-player>
                         </div>

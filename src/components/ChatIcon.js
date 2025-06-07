@@ -1,4 +1,4 @@
-import React, { useState ,useEffect ,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ChatIcon.css';
 
 const ChatIcon = () => {
@@ -9,7 +9,7 @@ const ChatIcon = () => {
     setIsOpen(!isOpen);
   };
 
-    useEffect(() => {
+  useEffect(() => {
     if (!isOpen) return;
 
     const handleClickOutside = (event) => {
@@ -23,31 +23,32 @@ const ChatIcon = () => {
   }, [isOpen]);
 
   return (
-    <div className="chat-icon" onClick={toggleChat}>
-          {/* <img
-            src="/img/chatbot.png"
-            alt="Chat Icon"
-            style={{ width: '100px', height: '100px', verticalAlign: 'middle' }}
-          /> */}
-           <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_qp1q7mct.json" background="transparent" speed="1" loop autoplay style={{
+    <div className="chat-icon">
+      <div onClick={toggleChat}>
+        <lottie-player
+          src="https://assets2.lottiefiles.com/packages/lf20_qp1q7mct.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+          style={{
             width: '130px',
             height: '130px',
             verticalAlign: 'middle',
             marginTop: '-20px',
-            marginbottom :'-15px',
+            marginBottom: '-15px',
             marginLeft: '-2px'
-           }}></lottie-player>
-
-          <h3 style={{ display: 'inline', marginLeft: '10px' }}>Chatbot</h3>
-      
+          }}
+        ></lottie-player>
+        <h3 style={{ display: 'inline', marginLeft: '10px' }}>Chatbot</h3>
+      </div>
       {isOpen && (
-        <div className="chat-popup">
+        <div className="chat-popup" ref={popupRef}>
           <iframe
             src="https://backend-chatbot-rr7y.onrender.com/"
             title="Chatbot"
             width="1050"
             height="700px"
-            
           ></iframe>
         </div>
       )}

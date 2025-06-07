@@ -7,7 +7,7 @@ import ChatIcon from './ChatIcon';
 import Pfpchanger from './PfpChanger';
 
 const resourcesSectionStyle = {
-  width: '70%',
+  width: '80%',
   display: 'flex',
   flexDirection: 'row',
   paddingTop: 0 ,
@@ -25,7 +25,7 @@ const subjectsContainerStyle = {
     paddingTop: 0 ,
   flexWrap: 'wrap',
   gap: '2rem',
-  width: '100%',
+  width: '80%',
   justifyContent: 'flex-start'
 };
 
@@ -236,7 +236,9 @@ const Subject = () => {
                 
                
                 <div className="rectangle-5">
-                <div className="inside-rectangle-5">
+                <div className="inside-rectangle-5"style={{
+                marginTop: '750px',
+              }}>
                     <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_EzPrWM.json" background="transparent" speed="1" loop autoplay style={{ width: "100%", height: "100%" }}></lottie-player>
                   </div>
               </div>
