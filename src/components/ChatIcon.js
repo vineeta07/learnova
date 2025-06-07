@@ -1,18 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect ,useRef } from 'react';
 import './ChatIcon.css';
 
 const ChatIcon = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const popupRef = useRef(null);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
 
+    useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
   return (
-    <div>
-      <div className="chat-icon" onClick={toggleChat}>💬
-        <h3>Chat with Assistant here....</h3>
-      </div>
+    <div className="chat-icon" onClick={toggleChat}>
+          {/* <img
+            src="/img/chatbot.png"
+            alt="Chat Icon"
+            style={{ width: '100px', height: '100px', verticalAlign: 'middle' }}
+          /> */}
+           <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_qp1q7mct.json" background="transparent" speed="1" loop autoplay style={{
+            width: '130px',
+            height: '130px',
+            verticalAlign: 'middle',
+            marginTop: '-20px',
+            marginbottom :'-15px',
+            marginLeft: '-2px'
+           }}></lottie-player>
+
+          <h3 style={{ display: 'inline', marginLeft: '10px' }}>Chatbot</h3>
+      
       {isOpen && (
         <div className="chat-popup">
           <iframe
@@ -20,7 +47,7 @@ const ChatIcon = () => {
             title="Chatbot"
             width="1050"
             height="700px"
-            frameBorder="0"
+            
           ></iframe>
         </div>
       )}

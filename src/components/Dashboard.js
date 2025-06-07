@@ -1,22 +1,23 @@
-import React ,{useEffect} from 'react' 
+import React ,{useEffect ,useState} from 'react' 
 import {Link, Outlet} from 'react-router-dom'
 import './Dashboard.css';
 import {app} from '../Firebase'
-import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import{ useNavigate } from 'react-router-dom'
 // import Chatbot from './Chatbot';
 import ChatIcon from './ChatIcon';
-
+import Pfpchanger from './PfpChanger';
 import Logo from '../images/Logo.png'; // Adjust the path to your logo image
 
 const Dashboard = () => {
   const navigate = useNavigate('')
-  const Logout =()=>{
-    const auth = getAuth(app)
-    signOut(auth).then(res=>{
-      navigate('/login')
-    })
-  }
+  const [dateTime, setDateTime] = useState(new Date());
+
+   useEffect(() => {
+    const timer = setInterval(() => setDateTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
 
   useEffect(()=>{
     const auth = getAuth(app)
@@ -45,12 +46,14 @@ const Dashboard = () => {
          
       <div className="overlap-group-wrapper">
         <div className="overlap-group">
-          <div>
-            <Link to="/dashboard">
-              <img src={Logo} alt="Logo" className="logo-img" />
-            </Link></div>
+          <Link to="/dashboard" style={{ position: 'relative', zIndex: 10 }}>
+                                                   <img src={Logo} alt="Logo" style={{
+                                                      width: '200px',     /* Adjust as needed */
+                                                       marginLeft: '1.5rem',
+                                                       }} />
+                                                 </Link>
           <div className="rectangle" ></div>
-          <img className="img" src="img/rectangle-3.png" />
+          <img className="img" src="/img/image1.png" />
           <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
           <div className="div" style={{ backgroundColor: 'lightblue' }}></div>
           <p className="welcome-back-buddy">
@@ -72,12 +75,7 @@ const Dashboard = () => {
           <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
           <br/>
           <br/>
-            <button type='button' onClick={Logout} style ={ {color: 'purple',
-               width: '130px',      // Set the width you want
-                padding: '10px',   // Optional: makes the button taller
-               fontSize: '1.1rem',
-               fontWeight: 'bold',  
-             }}>Log Out</button>
+            
           </div>
           <div className="rectangle-7">
                   
@@ -125,9 +123,20 @@ const Dashboard = () => {
           <div className="text-wrapper-13">subject2</div>
           <div className="rectangle-32"></div>
           <div className="text-wrapper-14">subject 3</div>
-          <div className="text-wrapper-15"><h4>DASHBOARD</h4></div>   
-          <div className="rectangle-33"></div>
-          <div className="text-wrapper-16">date,day</div>
+          <div className="text-wrapper-15"><h4>DASHBOARD</h4></div> 
+
+          <div className="text-wrapper-16" style={{ 
+            textAlign: 'right', padding: '10px', fontWeight: 'bold', fontSize: '1.1rem',
+              background: 'rgb(235, 136, 136)', marginTop: '-20px',
+              border: '2px solid #222', marginLeft:'-40px',
+              borderRadius: '10px',
+              color: '#111', // very dark text
+              
+              width: 'fit-content',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                      
+            }}>
+              {dateTime.toLocaleDateString('en-GB')} , {dateTime.toLocaleTimeString()}</div>
           <div className="text-wrapper-17">latest result</div>
           <div className="text-wrapper-18">more</div>
           <div className="rectangle-34"></div>
@@ -158,9 +167,9 @@ const Dashboard = () => {
           <div className="rectangle-46"></div>
           <div className="rectangle-47"></div>
           <div className="rectangle-48"></div>
-          <div className="ellipse-2"></div>
+          <div className="ellipse-2"><Pfpchanger/></div>
           <p className="text-wrapper-29"><h2>you learned ----hrs and -----questions this week</h2></p>
-          <img className="profile" src="img/profile.svg" />
+          
            </div>
         
         </div>

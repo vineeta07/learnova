@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import { app } from '../Firebase';
+import { getAuth, signOut } from 'firebase/auth';
+import {useNavigate} from 'react-router-dom';
 
 function PfpChanger() {
   const [avatar, setAvatar] = useState(() => localStorage.getItem('profile-avatar') || '');
@@ -55,9 +57,16 @@ function PfpChanger() {
       reader.readAsDataURL(file);
     }
   };
-
+   
+  const navigate = useNavigate('')
+  const Logout =()=>{
+      const auth = getAuth(app)
+      signOut(auth).then(res=>{
+        navigate('/login')
+      })
+    }
   return (
-    <div>
+    <div >
       <img
         src={avatar || '/img/avatar4.png'}
         alt="Profile"
@@ -84,6 +93,19 @@ function PfpChanger() {
         style={{ display: 'none' }}
       />
     </label>
+     <br/>
+      <br/>
+     <br/>
+     <br/>
+     
+     <button type='button' onClick={Logout} style ={ {color: 'purple',
+                    width: '130px',      // Set the width you want
+                     padding: '7px',   // Optional: makes the button taller
+                    fontSize: '1.1rem',
+                    borderRadius: '6px',
+                    fontWeight: 'bold', 
+                    marginLeft:'10px' 
+                  }}>Log Out</button>
      
     </div>
   );

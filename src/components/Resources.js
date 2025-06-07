@@ -1,24 +1,23 @@
-import React ,{useEffect}from 'react'
+import React ,{useEffect, useState}from 'react'
 import {Link, Outlet} from 'react-router-dom'
 import './Dashboard.css'
 import {app} from '../Firebase'
-import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth'
-import{ useNavigate } from 'react-router-dom'
-<<<<<<< HEAD
+import {getAuth,onAuthStateChanged} from 'firebase/auth'
+
+
 import Logo from '../images/Logo.png';
 import ChatIcon from './ChatIcon';
-=======
-import ChatIcon from './ChatIcon';
+import PfpChanger from './PfpChanger'
 
->>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
+
 
 const resourcesSectionStyle = {
-  width: '60%',
+  width: '100%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center', // align to left
   justifyContent: 'flex-start',
-  marginTop: 0,
+  marginTop: '0',
   marginLeft: '20rem',
 };
 
@@ -26,7 +25,7 @@ const resourcesListStyle = {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'flex-start',
-  marginTop: 0,
+  marginTop: '-50px',
   flexWrap: 'wrap',
   gap: '5rem',
   
@@ -81,13 +80,14 @@ const resourceList = [
   
 ];
 const Resources = () => {
-   const navigate = useNavigate('')
-  const Logout =()=>{
-    const auth = getAuth(app)
-    signOut(auth).then(res=>{
-      navigate('/login')
-    })
-  }
+   
+     const [dateTime, setDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setDateTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
 
   useEffect(()=>{
     const auth = getAuth(app)
@@ -120,7 +120,7 @@ const Resources = () => {
                                                        
                                                                                    }} />
                                                   </Link>
-                      <img className="img" src="img/rectangle-3.png" />
+                      <img className="img" src="img/image3.png" />
                       <div className="text-wrapper"><Link to='/resources' style={{ color: 'black', display: 'block' }}>Resources</Link></div>
                     
                       <div style={resourcesSectionStyle}>
@@ -159,38 +159,33 @@ const Resources = () => {
                       <div className="text-wrapper-5"> <Link to='/learningplan' style={{ color: 'black', display: 'block' }}>Learning plan</Link>
                       <br/>
                       <br/>
-                        <button type='button' onClick={Logout} style ={ {color: 'purple',
-                          width: '130px',      // Set the width you want
-                            padding: '10px',   // Optional: makes the button taller
-                          fontSize: '1.1rem',
-                          fontWeight: 'bold',  
-                        }}>Log Out</button>
-                      </div>
-                      </div>
                       
-                      
-<<<<<<< HEAD
-                      <div className="rectangle-7">
-                         <ChatIcon />
                       </div>
-=======
+                      </div>
+   
                       <div className="rectangle-7"><ChatIcon /></div>
->>>>>>> 6d72e3679d827de76b87d072e24dbb8897b20254
+
                       <div className="text-wrapper-15">
-                        <h4 style={{ textAlign: 'center', marginBottom: '2rem' ,  marginTop: '80px'  }}>RESOURCES</h4>
+                        <h4 >RESOURCES</h4>
                         </div>
-                      <div className="rectangle-33"></div>
-
-                      
-                      <div className="text-wrapper-16">date,day</div>
-                      <div className="ellipse-2"></div>
-
-
-
-
                      
-                      
-                      <img className="profile" src="img/profile.svg" />
+
+                      <div className="text-wrapper-16" style={{ 
+                          textAlign: 'right', padding: '10px', fontWeight: 'bold', fontSize: '1.1rem',
+                            background: 'rgb(217, 243, 172)', marginTop: '-10px',
+                            border: '2px solid #222', marginLeft:'-40px',
+                            borderRadius: '10px',
+                            color: '#111', // very dark text
+                            
+                            width: 'fit-content',
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                                    
+                          }}>
+                              {dateTime.toLocaleDateString('en-GB')} , {dateTime.toLocaleTimeString()}</div>
+                      <div className="ellipse-2">
+                        <PfpChanger/>
+                      </div>
+
                     </div>
                     
                     </div>

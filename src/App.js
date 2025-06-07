@@ -6,7 +6,7 @@ import Dashboard from './components/Dashboard';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Resources from './components/Resources'; 
-import Subject from './components/Subject'; // Import the subject component 
+import Subject from './components/subject'; // Import the subject component 
 import Learningplan from './components/Learningplan'; 
 import Addtask from './components/Addtask';
 import Tasklist from './components/Tasklist';
