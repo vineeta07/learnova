@@ -290,22 +290,53 @@
   }
   
   .desktop .rectangle-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
     position: absolute;
-    width: 10px;
+    width: 20px;
     height: 241px;
     top: 448px;
     left: 836px;
     background-color: #ffffff;
   }
+  .rectangle-10 .vertical-bar {
+  width: 100%;
+  height: 0;
+  /* background: linear-gradient(180deg, #43b6e3 60%, #298de5 100%); */
+  /* border-radius: 4px; */
+  transition: height 4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .rectangle-10 .bar1 {
+    background-color: #e52929;
+  }
+  .rectangle-10 .bar2 {
+    background-color: #43b6e4;
+  }
+  .rectangle-10 .bar3 {
+    background-color: #4f47aa;
+  }
   
   .desktop .rectangle-11 {
     position: absolute;
-    width: 10px;
+    width: 20px;
     height: 241px;
     top: 448px;
     left: 912px;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
+  .rectangle-11 .vertical-bar {
+  width: 100%;
+  height: 0;
+  /* background: linear-gradient(180deg, #43b6e3 60%, #298de5 100%); */
+  /* border-radius: 4px; */
+  transition: height 4s cubic-bezier(0.4, 0, 0.2, 1);
+}
   
   .desktop .rectangle-12 {
     position: absolute;
@@ -420,11 +451,34 @@
   
   .desktop .rectangle-21 {
     position: absolute;
-    width: 10px;
+    width: 20px;
     height: 241px;
     top: 448px;
     left: 760px;
     background-color: #ffffff;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  /* Each vertical bar */
+  .vertical-bar {
+    width: 100%;
+    height: 0;
+    /* background: linear-gradient(180deg, #43b6e3 60%, #298de5 100%); */
+    /* border-radius: 4px; */
+    transition: height 4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* No label or span inside */
+  }
+  .bar1{
+    background-color: #e52929;
+  }
+  .bar2{
+    background-color: #43b6e4;
+  }
+  .bar3{
+    background-color: #4f47aa;
   }
   
   .desktop .rectangle-22 {
@@ -830,7 +884,7 @@
   
   .desktop .python-prog {
     position: absolute;
-    top: 675px;
+    top: 663px;
     left: 382px;
     font-family: "Gang of Three-Regular", Helvetica;
     font-weight: 400;
@@ -861,58 +915,218 @@
   .desktop .rectangle-39 {
     position: absolute;
     width: 108px;
-    height: 7px;
+    height: 17px;
     top: 448px;
     left: 545px;
+    overflow: hidden;  /* Ensures the fill doesn't overflow */
     background-color: #fffefe;
+    
   }
+  .desktop .rectangle-39 .rectangle39_fillbar {
+  position: relative;  
+  height: 100%;
+  width: 0;
+  background-color: #298de5; /* Fill color */
+  animation: fillBarAnim1 4s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* or center if you want it in the middle */
+  color: #fff;
+  font-size: 10px;
+  padding-right: 5px; /* adjust as needed */
+  /* border-radius: 4px; */
+}
+.desktop .rectangle-39 .fillbar-text {
+  position: absolute;
+  right: 5px;
+  color: #150e0e;
+  font-size: 10px;
+  font-weight: 600;
+  top: 50%;
+  transform: translateY(-50%) ;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fillBarAnim1 {
+  to {
+    width: 54px; /* How much you want to fill (adjust as needed) */
+  }
+}
   
   .desktop .rectangle-40 {
     position: absolute;
     width: 108px;
-    height: 7px;
+    height: 17px;
     top: 516px;
     left: 545px;
     background-color: #fffefe;
+    overflow: hidden; 
   }
-  
+    .desktop .rectangle-40 .rectangle40_fillbar {
+  position: relative;  
+  height: 100%;
+  width: 0;
+  background-color: #29b0e5; /* Fill color */
+  animation: fillBarAnim2 4s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* or center if you want it in the middle */
+  color: #fff;
+  font-size: 10px;
+  padding-right: 5px; /* adjust as needed */
+  /* border-radius: 4px; */
+}
+.desktop .rectangle-40 .fillbar-text {
+  position: absolute;
+  right: 5px;
+  color: #150e0e;
+  font-size: 10px;
+  font-weight: 600;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fillBarAnim2 {
+  to {
+    width: 74px; /* How much you want to fill (adjust as needed) */
+  }
+}
   .desktop .rectangle-41 {
     position: absolute;
     width: 108px;
-    height: 7px;
+    height: 17px;
     top: 571px;
     left: 545px;
     background-color: #fffefe;
+    overflow: hidden;
   }
+  .desktop .rectangle-41 .rectangle41_fillbar {
+  position: relative;
+  height: 100%;
+  width: 0;
+  background-color: #ed0a0a; /* Fill color */
+  animation: fillBarAnim3 4s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+  font-size: 10px;
+  padding-right: 5px;
+}
+.desktop .rectangle-41 .fillbar-text {
+  position: absolute;
+  right: 5px;
+  color: #150e0e;
+  font-size: 10px;
+  font-weight: 600;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fillBarAnim3 {
+  to {
+    width: 32px; /* 30% of 108px ≈ 32px */
+  }
+}
   
   .desktop .rectangle-42 {
     position: absolute;
     width: 108px;
-    height: 7px;
+    height: 17px;
     top: 634px;
     left: 545px;
     background-color: #fffefe;
+    overflow: hidden;
   }
+  .desktop .rectangle-42 .rectangle42_fillbar {
+  position: relative;
+  height: 100%;
+  width: 0;
+  background-color: #10b43c; /* Fill color */
+  animation: fillBarAnim4 4s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+  font-size: 10px;
+  padding-right: 5px;
+}
+.desktop .rectangle-42 .fillbar-text {
+  position: absolute;
+  right: 5px;
+  color: #150e0e;
+  font-size: 10px;
+  font-weight: 600;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fillBarAnim4 {
+  to {
+    width: 102px; /* 95% of 108px ≈ 102px */
+  }
+}
   
   .desktop .rectangle-43 {
     position: absolute;
     width: 108px;
-    height: 7px;
+    height: 17px;
     top: 691px;
     left: 545px;
     background-color: #fffefe;
+    overflow: hidden;
   }
+  .desktop .rectangle-43 .rectangle43_fillbar {
+  position: relative;
+  height: 100%;
+  width: 0;
+  background-color: #0ad8ca; /* Fill color */
+  animation: fillBarAnim5 4s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+  font-size: 10px;
+  padding-right: 5px;
+}
+.desktop .rectangle-43 .fillbar-text {
+  position: absolute;
+  right: 5px;
+  color: #150e0e;
+  font-size: 10px;
+  font-weight: 600;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes fillBarAnim5 {
+  to {
+    width: 78px; /* 77% of 108px ≈ 83px */
+  }
+}
   
   .desktop .rectangle-44 {
     position: absolute;
-    width: 6px;
-    height: 25px;
-    top: 438px;
-    left: 556px;
-    background-color: #43b6e3;
-    transform: rotate(90deg);
+    width: 27px;
+    height: 7px;
+    top: 448px;
+    left: 515px;
+    background-color: #76bdd8;
+    /* transform: rotate(90deg); */
+    transform: translateX(20px); 
+    /* transition: all 0.3s ease-in-out 2s; */
+    animation: moveAndColor 2s ease-in-out forwards;
   }
-  
+  @keyframes moveAndColor {
+  to {
+    /* transform: translateX(30px); */
+    background-color: #e52929; /* Change to your desired color */
+  }
+}
   .desktop .rectangle-45 {
     position: absolute;
     width: 6px;

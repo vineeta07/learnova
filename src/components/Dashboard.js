@@ -29,6 +29,26 @@ const Dashboard = () => {
         console.log('not login')
       }
     })
+    const heights = [100, 80, 50]; // Adjust as needed
+    document.querySelectorAll('.rectangle-21 .vertical-bar').forEach((bar, i) => {
+    setTimeout(() => {
+      bar.style.height = `${heights[i]}px`;
+    }, 200);
+    });
+     // Animate vertical bars in rectangle-10
+    const heights10 = [70, 40,0]; // px, adjust as needed
+    document.querySelectorAll('.rectangle-10 .vertical-bar').forEach((bar, i) => {
+    setTimeout(() => {
+      bar.style.height = `${heights10[i]}px`;
+    }, 200);
+    });
+    // Animate vertical bars in rectangle-11
+    const heights11 = [90, 60, 30]; // adjust as needed
+    document.querySelectorAll('.rectangle-11 .vertical-bar').forEach((bar, i) => {
+    setTimeout(() => {
+      bar.style.height = `${heights11[i]}px`;
+    }, 200);
+    });
     return ()=> unsubscribe();
   },[])
   return (
@@ -92,9 +112,17 @@ const Dashboard = () => {
           <p className="p">time spend on learning :</p>
           <div className="text-wrapper-6">fri</div>
           <div className="text-wrapper-7">sat</div>
-          <div className="rectangle-10"></div>
-          <div className="rectangle-11"></div>
-          <div className="rectangle-12"></div>
+          <div className="rectangle-10">
+            <div className="vertical-bar bar1"></div>
+            <div className="vertical-bar bar2"></div>
+            <div className="vertical-bar bar3"></div>
+          </div>
+          <div className="rectangle-11">
+            <div className="vertical-bar bar1"></div>
+            <div className="vertical-bar bar2"></div>
+            <div className="vertical-bar bar3"></div>
+          </div>
+          {/* <div className="rectangle-12"></div> */}
           <div className="rectangle-13"></div>
           <div className="rectangle-14"></div>
           <div className="rectangle-15"></div>
@@ -108,16 +136,20 @@ const Dashboard = () => {
           }}>
             <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" loop autoplay style={{ width: "100%", height: "100%" }}></lottie-player></div>
           {/* <div className="ellipse"></div> */}
-          <div className="rectangle-21"></div>
+          <div className="rectangle-21">
+            <div className="vertical-bar bar1"></div>
+            <div className="vertical-bar bar2"></div>
+            <div className="vertical-bar bar3"></div>
+          </div>
           <div className="rectangle-22"></div>
-          <div className="rectangle-23"></div>
-          <div className="rectangle-23"></div>
-          <div className="rectangle-24"></div>
-          <div className="rectangle-25"></div>
-          <div className="rectangle-26"></div>
-          <div className="rectangle-27"></div>
-          <div className="rectangle-28"></div>
-          <div className="rectangle-29"></div>
+          {/* <div className="rectangle-23"></div> */}
+          {/* <div className="rectangle-23"></div> */}
+          {/* <div className="rectangle-24"></div> */}
+          {/* <div className="rectangle-25"></div> */}
+          {/* <div className="rectangle-26"></div> */}
+          {/* <div className="rectangle-27"></div> */}
+          {/* <div className="rectangle-28"></div> */}
+          {/* <div className="rectangle-29"></div> */}
           <div className="text-wrapper-8">mon</div>
           <div className="text-wrapper-9">tues</div>
           <div className="text-wrapper-10">wed</div>
@@ -162,16 +194,16 @@ const Dashboard = () => {
             <span className="text-wrapper-27">python prog</span> <span className="text-wrapper-2">.</span>
           </p>
           <div className="text-wrapper-28">am-102.</div>
-          <div className="rectangle-39"></div>
-          <div className="rectangle-40"></div>
-          <div className="rectangle-41"></div>
-          <div className="rectangle-42"></div>
-          <div className="rectangle-43"></div>
-          <div className="rectangle-44"></div>
-          <div className="rectangle-45"></div>
-          <div className="rectangle-46"></div>
-          <div className="rectangle-47"></div>
-          <div className="rectangle-48"></div>
+          <div className="rectangle-39"><div className="rectangle39_fillbar"><span className="fillbar-text">50%</span></div></div>
+          <div className="rectangle-40"><div className="rectangle40_fillbar"><span className="fillbar-text">70%</span></div></div>
+          <div className="rectangle-41"><div className="rectangle41_fillbar"><span className="fillbar-text">30%</span></div></div>
+          <div className="rectangle-42"><div className="rectangle42_fillbar"><span className="fillbar-text">95%</span></div></div>
+          <div className="rectangle-43"><div className="rectangle43_fillbar"><span className="fillbar-text">74%</span></div></div>
+          {/*<div className="rectangle-44"></div>  */}
+          {/* <div className="rectangle-45"></div> */}
+          {/* <div className="rectangle-46"></div> */}
+          {/* <div className="rectangle-47"></div> */}
+          {/* <div className="rectangle-48"></div> */}
           <div className="ellipse-2"><Pfpchanger/></div>
           <p className="text-wrapper-29"><h2>you learned ----hrs and -----questions this week</h2></p>
           
