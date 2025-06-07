@@ -71,7 +71,7 @@ function PfpChanger() {
         src={avatar || '/img/avatar4.png'}
         alt="Profile"
         width={100}
-        style={{ borderRadius: '50%', width:'200px', marginTop:'-20px',marginLeft:'-18px',objectFit: 'cover',allignItem:'flex-left', objectFit: 'cover', marginBottom: '0px',    border: avatar === '/img/avatar6.png' ? 'none' : '3px solid black' }}
+        style={{ borderRadius: '50%', width:'200px', marginTop:'-58px',marginLeft:'-18px',objectFit: 'cover',allignItem:'flex-left', objectFit: 'cover', marginBottom: '0px',    border: avatar === '/img/avatar6.png' ? 'none' : '3px solid black' }}
       />
 
        <AvatarPicker selected={avatar} onPick={(src) =>{ setAvatar(src);  localStorage.setItem('profile-avatar', src);}} />
@@ -95,8 +95,8 @@ function PfpChanger() {
     </label>
      <br/>
       <br/>
-     <br/>
-     <br/>
+     
+     
      
      <button type='button' onClick={Logout} style ={ {color: 'purple',
                     width: '130px',      // Set the width you want

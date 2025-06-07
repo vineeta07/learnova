@@ -7,7 +7,7 @@ import ChatIcon from './ChatIcon';
 import Pfpchanger from './PfpChanger';
 
 const resourcesSectionStyle = {
-  width: '80%',
+  width: '90%',
   display: 'flex',
   flexDirection: 'row',
   paddingTop: 0 ,

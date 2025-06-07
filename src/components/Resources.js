@@ -12,7 +12,7 @@ import PfpChanger from './PfpChanger'
 
 
 const resourcesSectionStyle = {
-  width: '60%',
+  width: '70%',
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center', // align to left

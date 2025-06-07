@@ -55,21 +55,21 @@
   .desktop .overlap-group-wrapper {
     background-color: #edeefe;
     /* overflow: hidden; */
-    width: 1524px;
+    width: 1424px;
     height: 1024px;
   }
   
   .desktop .overlap-group {
     position: relative;
-    width: 1747px;
+    width: 1430px;
     height: 1055px;
     top: -1px;
   }
   
   .desktop .rectangle {
     position: absolute;
-    width: 1524px;
-    height: 1024px;
+    width: 1224px;
+    height: 990px;
     top: 31px;
     left: 223px;
     background-color: #eceefede;
@@ -160,7 +160,7 @@
   
   .desktop .rectangle-5 {
     position: absolute;
-    width: 262px;
+    width: 242px;
     height: 1024px;
     top: 0;
     left: 1267px;
