@@ -894,6 +894,11 @@
     line-height: 44px;
     white-space: nowrap;
   }
+  .react-calendar__tile.highlight {
+  background: #ffe0e0 !important;
+  color: #e52929 !important;
+  border-radius: 50%;
+}
   
   .desktop .text-wrapper-27 {
     color: #4f47aa;
@@ -952,7 +957,67 @@
     width: 54px; /* How much you want to fill (adjust as needed) */
   }
 }
-  
+  /* Add to your CSS file */
+.bottom-boxes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.rectangle-3 {
+  width: 120px;
+  height: 120px;
+  background: #e0e7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.rectangle-3:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  background: #a67ac9;
+  transform: scale(1.05);
+}
+.rectangle-2 {
+  width: 120px;
+  height: 120px;
+  background: #e0e7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.rectangle-2:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  background: #d77d7d;
+  transform: scale(1.05);
+}
+.rectangle-4 {
+  width: 120px;
+  height: 120px;
+  background: #e0e7ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.rectangle-4:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  background: #d596ca;
+  transform: scale(1.05);
+}
   .desktop .rectangle-40 {
     position: absolute;
     width: 108px;
