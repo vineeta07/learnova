@@ -28,6 +28,7 @@ const Learningplan = () => {
     localStorage.setItem('lastStreakUpdate', today);
     return prev + 1;
   });
+  setShowStreak(true);
   setTimeout(() => {
     if (streakRef.current) {
       streakRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
