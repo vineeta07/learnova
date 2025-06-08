@@ -144,8 +144,8 @@ const Dashboard = () => {
               transition: 'background 0.2s, box-shadow 0.2s',
               boxShadow: '0 2px 8px rgba(79,140,255,0.15)'
             }}
-            onMouseOver={e => e.currentTarget.style.background = 'linear-gradient(90deg,rgb(103, 161, 125) 0%,rgb(104, 142, 161) 100%)'}
-            onMouseOut={e => e.currentTarget.style.background = 'linear-gradient(90deg,rgb(114, 134, 172) 0%,rgb(75, 139, 94) 100%)'}
+            onMouseOver={e => e.currentTarget.style.background = 'linear-gradient(90deg,rgb(123, 171, 188) 0%,rgb(124, 177, 177) 100%)'}
+            onMouseOut={e => e.currentTarget.style.background = 'linear-gradient(90deg,rgb(122, 152, 191) 0%,rgb(105, 143, 192) 100%)'}
             onClick={() => setShowDeadlineForm(v => !v)}
           >
             {showDeadlineForm ? 'Close' : 'Add Deadline'}
