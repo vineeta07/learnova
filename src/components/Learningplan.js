@@ -122,7 +122,7 @@ const Learningplan = () => {
               marginTop: 0,
               
               border: 'none',
-              background: 'linear-gradient(90deg,rgb(152, 96, 124) 0%,rgb(160, 95, 141) 100%)',
+              background: 'linear-gradient(90deg,rgb(122, 152, 191) 0%,rgb(105, 143, 192) 100%)',
               color: '  rgb(250, 241, 241) 0% ',
               padding: showDeadlineForm ? '7px 0px' : '12px 32px',
               borderRadius: showDeadlineForm ?  '40px' : '50px',
@@ -231,7 +231,7 @@ const Learningplan = () => {
                 padding: '10px 28px',
                 borderRadius: '8px',
                 border: 'none',
-                
+                background:'linear-gradient(90deg, rgb(131, 188, 158) 0%, rgb(98, 167, 156) 100%)',
                 color: '#fff',
                 fontWeight: 600,
                 fontSize: '1rem',

@@ -132,7 +132,7 @@ const Dashboard = () => {
               marginTop: 0,
               
               border: 'none',
-              background: 'linear-gradient(90deg,rgb(152, 44, 98) 0%,rgb(71, 178, 245) 100%)',
+              background:'linear-gradient(90deg,rgb(122, 152, 191) 0%,rgb(105, 143, 192) 100%)',
               color: '  rgb(250, 241, 241) 0% ',
               padding: showDeadlineForm ? '7px 0px' : '12px 32px',
               borderRadius: showDeadlineForm ?  '10px' : '50px',
